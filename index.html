@@ -96,6 +96,7 @@ main{position:relative;z-index:1;background:var(--bg)}
 .hero-pics{position:absolute;inset:0;z-index:0}
 .hero-pics img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;opacity:0;transition:opacity 1600ms ease}
 .hero-pics img.is-on{opacity:1}
+.hero-pics::after{content:"";position:absolute;left:0;right:0;top:0;height:150px;background:linear-gradient( /* scrim under the header, taste-skill-ignore */to bottom,rgba(15,31,16,.62) 0%,rgba(15,31,16,0) 100%);pointer-events:none}
 .hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;z-index:1;background:linear-gradient( /* scrim under the name, taste-skill-ignore */to top,rgba(15,31,16,.92) 0%,rgba(15,31,16,.72) 45%,rgba(15,31,16,0) 100%);pointer-events:none}
 .hero-tab::before{background:linear-gradient( /* scrim in the chapter colour, taste-skill-ignore */to top,var(--hero-field,#0f1f10) 0%,color-mix(in srgb,var(--hero-field,#0f1f10) 70%,transparent) 50%,transparent 100%)}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;background:var(--bg);opacity:0;pointer-events:none}
