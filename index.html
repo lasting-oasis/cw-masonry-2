@@ -4,381 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#0f1f10">
+<meta name="theme-color" content="#0f0f11">
 <title>C&amp;W Masonry, LLC</title>
 <meta name="description" content="C&W Masonry, LLC clears the lot, grades it, and builds the brick, block, and stone on top of it. One crew. Free on-site estimates.">
 <script>document.documentElement.classList.add('js')</script>
-<link rel="preconnect" href="https://api.fontshare.com">
-<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=erode@400,401,500,600&display=swap" rel="stylesheet">
-<style>
-/* Direction: the name as a monument. One serif (Erode), a forest ground, white ink, pale lime on the one action.
-   Fields take the subject's colours: brick for masonry, clay for grading, paper for the slip, the about section and the close. */
-:root{
-  color-scheme:dark;
-  --bg:#0f1f10; --surface:#162a17; --ink:#ffffff; --muted:#9aa39a;
-  --accent:#c6f19d; --accent-ink:#0f1f10;
-  --paper:#ffffff; --paper-ink:#0f1f10; --paper-surface:#edf0ea; --paper-muted:#5b665b;
-  --brick:#6e2a1f; --brick-ink:#ffffff;
-  --clay:#8c5a3c; --clay-ink:#ffffff;
-  --margin:clamp(20px,2.2vw,32px); --gutter:clamp(12px,1.4vw,24px);
-  --step-small:15px;
-  --step-body:17px;
-  --step-lead:22px;
-  --step-mid:28px;
-  --step-head:clamp(2rem,1.3rem + 3.2vw,4rem);
-  --font:Erode,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
-  --ease-out:cubic-bezier(.22,1,.36,1); --ease-expo:cubic-bezier(.16,1,.3,1); --ease-in-out:cubic-bezier(.76,0,.24,1); --ease-soft:cubic-bezier(.33,1,.68,1);
-  --t-press:140ms; --t-hover:180ms; --t-reveal:800ms;
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:var(--step-body);line-height:1.5;-webkit-font-smoothing:antialiased;font-kerning:normal}
-img{max-width:100%;display:block}
-h1,h2,h3,h4{font-weight:500;line-height:1.05;margin:0;letter-spacing:-.025em;text-wrap:balance}
-p,ul,ol,dl,figure{margin:0}
-p{text-wrap:pretty}
-a{color:inherit;text-decoration:underline;text-decoration-thickness:.07em;text-underline-offset:.2em;text-decoration-color:transparent;transition:text-decoration-color var(--t-hover) ease,color var(--t-hover) ease}
-@media (hover:hover) and (pointer:fine){a:hover{text-decoration-color:currentColor}}
-::selection{background:var(--accent);color:var(--accent-ink)}
-.field-paper ::selection{background:var(--paper-ink);color:var(--paper)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.field-paper :focus-visible{outline-color:var(--paper-ink)}
-[hidden]{display:none!important}
-.wrap{padding-inline:var(--margin)}
-.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter)}
-.view[hidden]{display:none}
-main{position:relative;z-index:1;background:var(--bg)}
-.sec{padding-block:clamp(96px,14vw,200px)}
-.sec h2{font-size:var(--step-head)}
-.h-mid{font-size:var(--step-mid)}
-.lede{font-size:var(--step-lead);line-height:1.35;max-width:40ch}
-.muted{color:var(--muted)}
-.ph{background:var(--accent);color:var(--accent-ink);padding:0 .25em}
-.field-paper{background:var(--paper);color:var(--paper-ink)}
-.field-paper .muted{color:var(--paper-muted)}
-.field-paper .ph{background:var(--paper-ink);color:var(--paper)}
-.field-brick{background:var(--brick);color:var(--brick-ink)}
-.field-clay{background:var(--clay);color:var(--clay-ink)}
-.field-brick .muted,.field-clay .muted{color:rgba(255,255,255,.78)}
-
-/* buttons: flat, square, one shape */
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;background:var(--accent);color:var(--accent-ink);font:inherit;font-weight:500;font-size:var(--step-body);line-height:1.1;text-decoration:none;border:0;cursor:pointer;transition:transform var(--t-press) var(--ease-out),background-color var(--t-hover) ease}
-.btn:active{transform:scale(.97)}
-@media (hover:hover) and (pointer:fine){.btn:hover{background:#d9f7bb}}
-.btn-paper{background:var(--paper);color:var(--paper-ink)}
-@media (hover:hover) and (pointer:fine){.btn-paper:hover{background:var(--paper-surface)}}
-.btn[disabled]{opacity:.6;cursor:default}
-
-/* header: wordmark left, links right, over the hero */
-.top{position:absolute;top:0;left:0;right:0;z-index:6;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px var(--margin);color:#fff}
-.mark{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:500;font-size:var(--step-body)}
-.mark svg{width:26px;height:26px;flex:none}
-.btn-top{min-height:40px;padding:0 14px;font-size:var(--step-small)}
-@media (max-width:420px){.mark span{display:none}}
-.links{display:flex;gap:26px;font-size:var(--step-small)}
-.tools{display:flex;align-items:center;gap:16px;font-size:var(--step-small)}
-.lang{display:inline-flex;gap:12px}
-.lang-btn{background:none;border:0;padding:6px 0;font:inherit;font-size:var(--step-small);color:inherit;cursor:pointer;opacity:.7}
-.lang-btn[aria-pressed="true"]{opacity:1;text-decoration:underline;text-underline-offset:.3em;text-decoration-thickness:.08em}
-.menu-btn{display:none;background:none;border:0;padding:8px 0;font:inherit;font-size:var(--step-body);color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:.3em;text-decoration-color:transparent}
-.menu-btn[aria-expanded="true"]{text-decoration-color:currentColor}
-.sheet{position:fixed;inset:0;z-index:20;background:var(--bg);color:var(--ink);padding:88px var(--margin) 40px;display:flex;flex-direction:column;gap:8px;font-size:var(--step-head);line-height:1.2}
-.sheet a{text-decoration:none;padding:6px 0}
-.sheet .sheet-tools{margin-top:auto;display:flex;gap:24px;font-size:var(--step-body);align-items:center}
-.sheet .btn{align-self:flex-start;margin-top:16px}
-.sheet-close{position:absolute;top:18px;right:var(--margin);background:none;border:0;font:inherit;font-size:var(--step-body);color:inherit;padding:8px 0;cursor:pointer;text-decoration:underline;text-underline-offset:.3em}
-@media (max-width:980px){.links{display:none}.menu-btn{display:inline-block}.top .lang{display:none}}
-
-/* hero: film title on the bottom edge */
-.hero{position:relative;min-height:100svh;overflow:clip;display:grid;grid-template-rows:1fr auto;padding:0 var(--margin) 34px;isolation:isolate;view-timeline-name:--hero}
-.hero-pics{position:absolute;inset:0;z-index:0}
-.hero-pics img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;opacity:0;transition:opacity 1600ms ease}
-.hero-pics img.is-on{opacity:1}
-.hero-pics::after{content:"";position:absolute;left:0;right:0;top:0;height:150px;background:linear-gradient( /* scrim under the header, taste-skill-ignore */to bottom,rgba(15,31,16,.62) 0%,rgba(15,31,16,0) 100%);pointer-events:none}
-.hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;z-index:1;background:linear-gradient( /* scrim under the name, taste-skill-ignore */to top,rgba(15,31,16,.92) 0%,rgba(15,31,16,.72) 45%,rgba(15,31,16,0) 100%);pointer-events:none}
-.hero-tab::before{background:linear-gradient( /* scrim in the chapter colour, taste-skill-ignore */to top,var(--hero-field,#0f1f10) 0%,color-mix(in srgb,var(--hero-field,#0f1f10) 70%,transparent) 50%,transparent 100%)}
-.hero::after{content:"";position:absolute;inset:0;z-index:1;background:var(--bg);opacity:0;pointer-events:none}
-.hero-row{position:relative;z-index:2;display:flex;justify-content:flex-start;align-items:flex-end;padding-bottom:18px}
-.hero-line{font-size:19px;line-height:1.4;max-width:30ch;color:#fff}
-.monument{position:relative;z-index:2;font-size:clamp(96px,16vw,290px);line-height:.86;letter-spacing:-.04em;white-space:nowrap;color:#fff;margin:0;width:100%;max-width:100%;overflow:clip}
-.monument .fit{display:inline-block;white-space:nowrap}
-.monument .br{display:none}
-@media (max-width:640px){
-  .hero{padding-bottom:20px}
-  .hero-line{font-size:19px;max-width:26ch}
-  .monument{font-size:clamp(64px,24vw,120px)}
-  .monument .br{display:block}
-  .hero-pics img{object-position:42% 50%}
-}
-@supports (animation-timeline:view()){
-  @media (prefers-reduced-motion:no-preference){
-    .hero-pics{animation:hero-sink linear both;animation-timeline:--hero;animation-range:exit 0% exit 100%}
-    .hero::after{animation:hero-dim linear both;animation-timeline:--hero;animation-range:exit 0% exit 100%}
-    .hero-row,.monument{animation:hero-lift linear both;animation-timeline:--hero;animation-range:exit 0% exit 70%}
-  }
-}
-@keyframes hero-sink{to{transform:translateY(8%) scale(1.06)}}
-@keyframes hero-dim{to{opacity:.35}}
-@keyframes hero-lift{to{transform:translateY(-6%);opacity:0}}
-
-/* load sequence */
-@media (prefers-reduced-motion:no-preference){
-  .js .hero [data-load]{opacity:0;transform:translateY(12px);animation:load-rise 500ms var(--ease-out) forwards;animation-delay:var(--d,420ms)}
-  .js .hero .monument .fit{display:inline-block;transform:translateY(105%);animation:line-up 900ms var(--ease-expo) forwards;animation-delay:150ms}
-  .js .hero .monument{overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
-  .js [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity 700ms var(--ease-out),transform 900ms var(--ease-out);transition-delay:calc(var(--i,0) * 70ms)}
-  .js [data-reveal].is-in{opacity:1;transform:none}
-  .js .band img{transform:scale(1.06);transition:transform 1600ms var(--ease-soft)}
-  .js .band.is-in img{transform:none}
-}
-@keyframes load-rise{to{opacity:1;transform:none}}
-@keyframes line-up{to{transform:none}}
-
-/* the slip: the job as an itinerary */
-.slip-sec .grid{row-gap:56px}
-.slip-copy{grid-column:1/6;display:grid;gap:28px;align-content:start}
-.slip-copy p{max-width:30ch;font-size:var(--step-lead);line-height:1.35}
-.planner{display:grid;gap:24px}
-.planner fieldset{border:0;padding:0;margin:0;min-width:0;display:grid;gap:10px}
-.planner legend{padding:0;margin-bottom:6px;font-size:var(--step-body);color:var(--muted)}
-.choices{display:flex;flex-wrap:wrap;gap:8px}
-.choices label{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:0 14px;background:var(--surface);cursor:pointer;font-size:var(--step-body);transition:background-color var(--t-hover) ease,color var(--t-hover) ease}
-.choices input{position:absolute;opacity:0;width:1px;height:1px}
-.choices label:has(input:checked){background:var(--ink);color:var(--bg)}
-.choices label:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:3px}
-@media (hover:hover) and (pointer:fine){.choices label:hover{background:#1f3a21}.choices label:has(input:checked):hover{background:var(--ink)}}
-.slip-col{grid-column:7/-1;display:flex;flex-direction:column;align-items:flex-end}
-.slip{position:relative;background:var(--paper);color:var(--paper-ink);padding:28px 28px 36px;font-size:var(--step-body);font-variant-numeric:tabular-nums;width:100%;max-width:520px}
-.slip::after{content:"";position:absolute;left:0;right:0;bottom:-12px;height:12px;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='12'><path d='M0 0 L12 12 L24 0 Z' fill='%23ffffff'/></svg>") repeat-x;background-size:24px 12px}
-.slip-head{display:flex;justify-content:space-between;gap:16px;font-weight:600}
-.slip-head span{font-weight:400;color:var(--paper-muted)}
-.slip h3{font-size:var(--step-body);font-weight:600;letter-spacing:0;margin-top:28px;margin-bottom:8px}
-.row{display:flex;align-items:baseline;gap:10px;padding:5px 0}
-.row .what{flex:0 1 auto;min-width:0}
-.row .what a{text-decoration:underline;text-decoration-color:currentColor;text-decoration-thickness:.06em}
-.row .leader{flex:1 1 20px;min-width:20px;height:4px;align-self:end;margin-bottom:.45em;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='4'><circle cx='2' cy='2' r='2' fill='%230f1f10'/></svg>") repeat-x left bottom;background-size:10px 4px}
-.row .val{flex:none;white-space:nowrap;color:var(--paper-muted)}
-.row .val a{color:inherit}
-
-.row-total{margin:28px -28px 0;padding:11px 28px;background:var(--paper-ink);color:var(--paper);min-height:44px;display:flex;justify-content:space-between;gap:16px;align-items:center}
-.row-total .what{font-weight:600}
-.estimate{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter);row-gap:18px;margin-top:24px}
-.est-head{grid-column:1/6;display:grid;gap:10px;align-content:start}
-.est-a{grid-column:1/6;display:grid;gap:18px}
-.est-b{grid-column:7/-1;display:grid;gap:18px}
-@media (max-width:900px){.est-head,.est-a,.est-b{grid-column:1/-1}}
-.estimate h3{font-size:var(--step-lead);letter-spacing:-.01em}
-.f{display:grid;gap:6px}
-.f label{font-size:var(--step-small)}
-.f input,.f textarea{font:inherit;font-size:var(--step-body);padding:12px 14px;background:var(--surface);color:var(--ink);border:0;min-height:48px;width:100%;caret-color:var(--accent)}
-.f textarea{min-height:120px;resize:vertical;line-height:1.5}
-.f input::placeholder,.f textarea::placeholder{color:var(--muted)}
-.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.estimate .btn{justify-self:start}
-.note{background:var(--surface);padding:16px 18px;display:grid;gap:10px;font-size:var(--step-body)}
-.note pre{margin:0;white-space:pre-wrap;word-break:break-word;font:var(--step-small)/1.5 var(--font);background:var(--bg);padding:12px 14px;max-height:260px;overflow:auto}
-.note-actions{display:flex;gap:12px;align-items:center}
-.btn-quiet{background:var(--ink);color:var(--bg);min-height:40px;padding:0 14px;font-size:var(--step-small)}
-@media (hover:hover) and (pointer:fine){.btn-quiet:hover{background:#dfe6dc}}
-@media (max-width:900px){.slip-copy{grid-column:1/-1}.slip-col{grid-column:1/-1}.slip{max-width:none}}
-.slip-sec{padding-bottom:0}
-@media (max-width:560px){.f2{grid-template-columns:1fr}.slip{padding:22px 20px 30px}.row-total{margin-inline:-20px;padding-inline:20px}}
-
-/* one-size name columns */
-.index-sec{padding-block:clamp(96px,12vw,180px)}
-.index-head{margin-bottom:64px;align-items:end}
-.index-sec h2{grid-column:1/6;font-size:var(--step-mid)}
-.index{row-gap:40px}
-.group{grid-column:span 4;min-width:0}
-.group h3{font-size:var(--step-body);font-weight:500;letter-spacing:0;margin-bottom:1.25em}
-.names{list-style:none;padding:0;display:grid;gap:2px;font-size:var(--step-body);line-height:1.25}
-.names a{display:block;color:var(--muted);text-decoration:none;padding:3px 0}
-.names a:hover,.names a:focus-visible{color:var(--ink)}
-.group-sum{display:none;margin-top:16px;color:var(--ink);font-size:var(--step-body);line-height:1.45}
-.index-desc{grid-column:7/-1;font-size:var(--step-lead);line-height:1.35;color:var(--ink);min-height:2lh;max-width:34ch;margin:0}
-@media (max-width:900px){
-  .index-sec{padding-block:96px}
-  .index-head{margin-bottom:48px}
-  .index-sec h2{grid-column:1/-1}
-  .group{grid-column:1/-1}
-  .names{line-height:1.4}
-  .names a{color:var(--ink);padding:6px 0}
-  .group-sum{display:block}
-  .index-desc{display:none}
-}
-
-/* full-width photograph */
-.band{position:relative;overflow:clip;background:var(--surface)}
-.band img{width:100%;height:auto;max-height:86svh;object-fit:cover;object-position:50% 40%}
-.band figcaption{position:absolute;left:var(--margin);bottom:18px;font-size:var(--step-small);color:#fff;background:rgba(15,31,16,.75);padding:6px 10px}
-
-/* side facts, wide paragraph */
-.about-sec{padding-block:clamp(96px,12vw,180px)}
-.about-row{display:grid;grid-template-columns:34% 1fr;column-gap:var(--gutter)}
-.about-row+.about-row{margin-top:120px}
-.facts{display:grid;gap:20px;max-width:220px;font-size:var(--step-body);line-height:1.4}
-.facts dt{color:var(--paper-muted)}
-.facts dd{margin:0}
-.about-main{display:grid;gap:28px;min-width:0}
-.about-main h2{font-size:var(--step-head)}
-.statement{font-size:var(--step-mid);line-height:1.3;max-width:66ch}
-.word{font-size:var(--step-body);line-height:1.4;padding-top:2px}
-.rec{list-style:none;padding:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(24px,4vw,64px);row-gap:12px;font-size:var(--step-body);line-height:1.4;max-width:100%}
-.rec li{display:flex;justify-content:space-between;gap:16px}
-.rec li span:last-child{color:var(--paper-muted);white-space:nowrap}
-@media (max-width:1100px){.rec{grid-template-columns:minmax(0,1fr)}}
-@media (max-width:760px){
-  .about-row{grid-template-columns:1fr;row-gap:28px}
-  .about-row .facts{order:2}
-  .about-row .about-main{order:1}
-  .about-row+.about-row{margin-top:64px}
-  .facts{max-width:none;grid-template-columns:1fr 1fr}
-  .statement{font-size:var(--step-lead);line-height:1.35}
-  .rec{max-width:420px}
-  .about-row.row2 .word{font-weight:500}
-}
-
-/* wide heading, indented questions */
-.faq-sec{padding-block:clamp(96px,12vw,180px)}
-.faq-sec h2{font-size:var(--step-head);max-width:14ch}
-.faq-list{margin-top:80px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter);row-gap:36px}
-.q{grid-column:5/13;min-width:0}
-.q summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;font-size:var(--step-lead);line-height:1.25;padding:4px 0}
-.q summary::-webkit-details-marker{display:none}
-.q summary::after{content:"";flex:none;width:12px;height:12px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translate(-2px,-2px);transition:transform var(--t-hover) ease;margin-right:6px}
-.q[open] summary::after{transform:rotate(225deg) translate(-2px,-2px)}
-.q[open]{background:var(--surface);margin:-24px;padding:24px}
-.field-paper .q[open]{background:var(--paper-surface)}
-.q .a{padding-top:16px;font-size:var(--step-body);line-height:1.5;max-width:48ch}
-@media (max-width:760px){
-  .faq-list{margin-top:40px;row-gap:28px}
-  .q{grid-column:1/-1}
-  .q[open]{margin:-16px calc(-1 * var(--margin));padding:16px var(--margin)}
-}
-
-/* the email as display type */
-.contact-sec{display:grid;grid-template-rows:auto auto auto;padding:clamp(96px,12vw,160px) var(--margin) 40px;position:relative;overflow-x:clip}
-.contact-mail .ph{background:none;color:inherit;padding:0}
-.contact-ask{font-size:var(--step-lead);max-width:30ch;line-height:1.35}
-.contact-mail{display:block;text-decoration:none;font-size:clamp(48px,8vw,150px);line-height:1;letter-spacing:-.035em;white-space:nowrap;width:100%;max-width:100%;overflow:clip;margin-top:clamp(72px,12vw,160px);margin-bottom:clamp(56px,8vw,110px);color:inherit}
-.contact-mail .fit{display:inline-block}
-@media (hover:hover) and (pointer:fine){.contact-mail:hover{color:var(--accent)}}
-.contact-foot{display:flex;justify-content:space-between;gap:24px;font-size:var(--step-small);flex-wrap:wrap}
-.contact-foot div{display:flex;gap:20px;flex-wrap:wrap}
-.contact-foot a{text-decoration-color:currentColor}
-@media (max-width:640px){
-  .contact-sec{padding-top:80px}
-  .contact-mail{font-size:clamp(36px,11.5vw,56px);white-space:normal;margin-top:64px;margin-bottom:56px}
-  .contact-foot{flex-direction:column;gap:12px}
-  .contact-foot div{flex-direction:column;gap:12px}
-}
-
-/* footer: columns above, wordmark below, uncovered as the page lifts */
-.foot{position:relative;display:grid;grid-template-rows:auto auto;padding:40px var(--margin) 20px}
-.foot-cols{row-gap:32px}
-.foot-col{grid-column:span 3;min-width:0;font-size:var(--step-body);line-height:1.5}
-.foot-col ul{list-style:none;padding:0;display:grid;gap:2px}
-.foot-col li:first-child{font-weight:500}
-.foot-col li+li{color:var(--paper-muted)}
-.foot-col a{text-decoration:none}
-.foot-col a:hover,.foot-col a:focus-visible{text-decoration:underline;text-decoration-color:currentColor}
-.foot-mark{display:grid;gap:20px;padding-top:clamp(96px,12vw,180px)}
-.foot-name{font-size:clamp(64px,16vw,300px);line-height:.86;letter-spacing:-.04em;white-space:nowrap;width:100%;overflow:clip}
-.foot-name .fit{display:inline-block}
-.legal{font-size:var(--step-small);color:var(--paper-muted)}
-@media (max-width:760px){.foot-col{grid-column:span 6}.foot{padding-top:32px}.foot-mark{padding-top:80px}.foot-name .br{display:block}}
-.foot-name .br{display:none}
-
-/* service pages */
-.list-sec .grid{row-gap:48px}
-.list-sec h2{grid-column:1/6}
-.rows{grid-column:1/-1;display:grid;gap:22px}
-.rowx{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter)}
-.rowx h3{grid-column:1/5;font-size:var(--step-lead);font-weight:500;letter-spacing:-.01em}
-.rowx p{grid-column:5/11;color:var(--ink);font-size:var(--step-body)}
-@media (max-width:760px){.rowx h3{grid-column:1/-1}.rowx p{grid-column:1/-1;margin-top:4px}.rows{gap:28px}}
-.fig-sec .grid{row-gap:48px}
-.fig-sec .fig-head{grid-column:1/8;display:grid;gap:20px}
-.fig-wrap{grid-column:1/8;min-width:0}
-.fig-scroll{overflow-x:auto;background:#F7F5F1}
-.fig-scroll svg{display:block;width:100%;height:auto;min-width:520px}
-.fig-cap{margin-top:14px;font-size:var(--step-small);color:var(--muted);max-width:62ch;line-height:1.5}
-.legend{grid-column:8/13;list-style:none;padding:0;display:grid;gap:18px;align-content:start;counter-reset:lg}
-.legend li{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px}
-.legend li::before{counter-increment:lg;content:counter(lg);width:28px;height:28px;background:var(--ink);color:var(--bg);font-weight:600;font-size:var(--step-small);display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
-.legend strong{display:block;font-weight:500;font-size:var(--step-lead);line-height:1.15;margin-bottom:4px}
-.legend span{color:var(--ink);font-size:var(--step-body);line-height:1.5}
-@media (max-width:900px){.fig-sec .fig-head,.fig-wrap,.legend{grid-column:1/-1}}
-.detail-sec .grid{row-gap:56px}
-.detail{grid-column:span 6;min-width:0;display:grid;gap:18px;align-content:start}
-.detail h2{font-size:var(--step-mid)}
-.detail h3{font-size:var(--step-lead);font-weight:500;margin-top:12px}
-.detail p,.detail dd,.detail li{color:var(--ink)}
-.detail strong{color:var(--ink);font-weight:500}
-.detail dl{display:grid;gap:14px}
-.detail dt{color:var(--ink)}
-.detail dd{margin:0}
-.detail ul{padding-left:1.1em;display:grid;gap:8px}
-@media (max-width:860px){.detail{grid-column:1/-1}}
-.swatches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 14px;margin-top:6px}
-.swatch{display:grid;gap:8px;min-width:0;align-content:start}
-.swatch svg{width:100%;height:auto;display:block}
-.swatch b{font-weight:500;color:var(--ink);font-size:var(--step-body);line-height:1.1}
-.swatch small{font-size:var(--step-small);color:var(--muted);line-height:1.4}
-@media (max-width:420px){.swatches{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.jprofs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:6px}
-.jprof{text-align:center;font-size:var(--step-small);color:var(--ink);min-width:0}
-.jprof svg{width:100%;height:auto;display:block;margin-bottom:6px}
-@media (max-width:560px){.jprofs{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.lineup{overflow-x:auto;background:#F7F5F1}
-.lineup svg{display:block;width:100%;height:auto;min-width:760px}
-.panels{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-block:4px 6px}
-.panels figure{margin:0;display:grid;gap:8px;min-width:0}
-.panels svg{width:100%;height:auto;display:block}
-.panels figcaption{font-size:var(--step-small);color:var(--ink);line-height:1.4}
-@media (max-width:520px){.panels{grid-template-columns:1fr}}
-.fig-sm{display:grid;gap:10px}
-.fig-sm svg{width:100%;height:auto;display:block}
-.fig-sm figcaption{font-size:var(--step-small);color:var(--ink);line-height:1.4}
-.dg-t{font-family:var(--font);font-weight:500;font-size:15px;fill:#231F1C}
-.dg-n{font-family:var(--font);font-size:13px;fill:#5B544E}
-.callout circle{fill:#9B3B2E;stroke:#fff;stroke-width:2}
-.callout text{fill:#fff;font-family:var(--font);font-weight:600;font-size:16px;text-anchor:middle;dominant-baseline:central}
-
-/* scenes and the steps */
-.steps-sec .grid{row-gap:56px}
-.steps-sec h2{grid-column:1/8}
-.scenes{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-.scene-card{display:grid;gap:12px;min-width:0;align-content:start}
-.scene-card svg{width:100%;height:auto;display:block}
-.scene-t{font-size:var(--step-lead);font-weight:500;line-height:1.15}
-.scene-t small{display:block;font-weight:400;font-size:var(--step-small);color:var(--paper-ink);margin-top:4px;line-height:1.45}
-@media (max-width:760px){.scenes{grid-template-columns:1fr}}
-.phases{grid-column:1/-1;display:grid;gap:56px}
-.phase{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter);row-gap:24px}
-.phase h3{grid-column:1/4;font-size:var(--step-lead);font-weight:500;letter-spacing:-.01em}
-.phase ol{grid-column:4/13;list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:22px 40px}
-.phase li{min-width:0}
-.phase h4{font-size:var(--step-body);font-weight:500;letter-spacing:0;margin-bottom:4px}
-.phase p{font-size:var(--step-body);line-height:1.5;color:var(--paper-ink)}
-.phase-note{grid-column:4/13;font-size:var(--step-body);color:var(--paper-ink);background:var(--paper-surface);padding:14px 16px}
-.phase-note strong{color:var(--paper-ink);font-weight:500}
-@media (max-width:900px){.phase h3{grid-column:1/-1}.phase ol{grid-column:1/-1}.phase-note{grid-column:1/-1}}
-@media (max-width:600px){.phase ol{grid-template-columns:1fr}}
-
-/* next: two pictures */
-.next-sec .grid{row-gap:40px}
-.next-sec h2{grid-column:1/8}
-.pair{grid-column:span 6;position:relative;display:block;text-decoration:none;min-width:0;overflow:clip;background:var(--surface)}
-.pair img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;transition:transform 1200ms var(--ease-soft)}
-@media (hover:hover) and (pointer:fine){.pair:hover img{transform:scale(1.04)}}
-.pair .pair-t{position:absolute;left:0;right:0;bottom:0;padding:20px;background:rgba(15,31,16,.85);display:grid;gap:4px;color:#fff}
-.pair .pair-t strong{font-size:var(--step-lead);font-weight:500}
-.pair .pair-t span{font-size:var(--step-small);color:#fff}
-@media (max-width:700px){.pair{grid-column:1/-1}}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero-before-1600.webp" type="image/webp" imagesizes="100vw" imagesrcset="img/hero-before-640.webp 640w, img/hero-before-1024.webp 1024w, img/hero-before-1600.webp 1600w, img/hero-before-2048.webp 2048w">
+<link rel="stylesheet" href="styles.css?v=c59d2ed0">
 </head>
 <body>
 <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
@@ -443,33 +77,35 @@ main{position:relative;z-index:1;background:var(--bg)}
 
 <header class="top">
   <a class="mark" href="#top" data-view="home">
-    <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" fill="#c6f19d"/><g fill="#0f1f10"><rect x="6" y="8" width="13" height="6"/><rect x="21" y="8" width="13" height="6"/><rect x="6" y="17" width="6" height="6"/><rect x="14" y="17" width="13" height="6"/><rect x="29" y="17" width="5" height="6"/><rect x="6" y="26" width="13" height="6"/><rect x="21" y="26" width="13" height="6"/></g></svg>
-    <span>C&amp;W Masonry</span>
+    <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" fill="#f4f4f5"/><g fill="#0f0f11"><rect x="6" y="8" width="13" height="6"/><rect x="21" y="8" width="13" height="6"/><rect x="6" y="17" width="6" height="6"/><rect x="14" y="17" width="13" height="6"/><rect x="29" y="17" width="5" height="6"/><rect x="6" y="26" width="13" height="6"/><rect x="21" y="26" width="13" height="6"/></g></svg>
+    <span translate="no">C&amp;W Masonry</span>
   </a>
-  <nav class="links" aria-label="Main">
+  <div class="lang" role="group" aria-label="Language">
+    <button class="lang-btn" type="button" data-lang="en" lang="en" aria-pressed="true">EN</button>
+    <button class="lang-btn" type="button" data-lang="es" lang="es" aria-pressed="false">ES</button>
+  </div>
+</header>
+
+<nav class="dock" aria-label="Main">
+  <a class="dock-logo" href="#top" data-view="home" aria-label="C&amp;W Masonry, home">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="6" y="8" width="13" height="6"/><rect x="21" y="8" width="13" height="6"/><rect x="6" y="17" width="6" height="6"/><rect x="14" y="17" width="13" height="6"/><rect x="29" y="17" width="5" height="6"/><rect x="6" y="26" width="13" height="6"/><rect x="21" y="26" width="13" height="6"/></g></svg>
+  </a>
+  <a class="dock-home" href="#top" data-view="home">Home</a>
+  <button class="dock-menu" id="menu-btn" type="button" aria-expanded="false" aria-controls="sheet" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div id="sheet" class="sheet" hidden>
+  <button class="sheet-close" id="sheet-close" type="button">Close</button>
+  <nav class="sheet-nav" aria-label="Pages">
+    <a href="#top" data-view="home">Home</a>
     <a href="#masonry" data-view="masonry">Masonry</a>
     <a href="#clearing" data-view="clearing">Land clearing</a>
     <a href="#grading" data-view="grading">Grading</a>
+    <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
-  <div class="tools">
-    <div class="lang" role="group" aria-label="Language">
-      <button class="lang-btn" type="button" data-lang="en" lang="en" aria-pressed="true">EN</button>
-      <button class="lang-btn" type="button" data-lang="es" lang="es" aria-pressed="false">ES</button>
-    </div>
-    <a class="btn btn-top" href="#estimate">Request an estimate</a>
-    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="sheet">Menu</button>
-  </div>
-</header>
-<div id="sheet" class="sheet" hidden>
-  <button class="sheet-close" id="sheet-close" type="button">Close</button>
-  <a href="#top" data-view="home">Home</a>
-  <a href="#masonry" data-view="masonry">Masonry</a>
-  <a href="#clearing" data-view="clearing">Land clearing</a>
-  <a href="#grading" data-view="grading">Grading</a>
-  <a href="#contact">Contact</a>
-  <a class="btn" href="#estimate">Request an estimate</a>
   <div class="sheet-tools">
+    <a class="btn" href="#estimate">Request an estimate</a>
     <div class="lang" role="group" aria-label="Language">
       <button class="lang-btn" type="button" data-lang="en" lang="en" aria-pressed="true">EN</button>
       <button class="lang-btn" type="button" data-lang="es" lang="es" aria-pressed="false">ES</button>
@@ -481,24 +117,99 @@ main{position:relative;z-index:1;background:var(--bg)}
 
 <!-- ============ HOME ============ -->
 <div class="view" id="view-home">
+
+  <!-- Cinematic hero: the frame scales down as you scroll and the lot goes before -> during -> after -->
   <section class="hero" id="hero-home" aria-labelledby="h-home">
-    <div class="hero-pics" aria-hidden="true">
-      <img class="is-on" src="img/scene-crew.jpg" width="1024" height="559" alt="" fetchpriority="high">
-      <img src="img/scene-clearing.jpg" width="1024" height="559" alt="" loading="lazy">
-      <img src="img/scene-grading.jpg" width="1024" height="559" alt="" loading="lazy">
+    <div class="hero-stage">
+      <div class="hero-back" aria-hidden="true" translate="no"><span class="hero-back-line">C&amp;W</span><span class="hero-back-line">Masonry</span></div>
+      <div class="frame" id="hero-frame">
+        <div class="plates">
+          <div class="plate is-on" data-plate="before">
+            <picture class="layer layer-sky">
+              <source type="image/webp" srcset="img/hero-before-640.webp 640w, img/hero-before-1024.webp 1024w, img/hero-before-1600.webp 1600w, img/hero-before-2048.webp 2048w" sizes="100vw">
+              <img src="img/hero-before-1600.jpg" srcset="img/hero-before-640.jpg 640w, img/hero-before-1024.jpg 1024w, img/hero-before-1600.jpg 1600w, img/hero-before-2048.jpg 2048w" sizes="100vw" width="2048" height="1152" alt="A wooded building lot at dusk, survey stakes flagged in pink, before any work" fetchpriority="high">
+            </picture>
+            <picture class="layer layer-ground" aria-hidden="true">
+              <source type="image/webp" srcset="img/hero-before-640.webp 640w, img/hero-before-1024.webp 1024w, img/hero-before-1600.webp 1600w, img/hero-before-2048.webp 2048w" sizes="100vw">
+              <img src="img/hero-before-1600.jpg" srcset="img/hero-before-640.jpg 640w, img/hero-before-1024.jpg 1024w, img/hero-before-1600.jpg 1600w, img/hero-before-2048.jpg 2048w" sizes="100vw" width="2048" height="1152" alt="">
+            </picture>
+          </div>
+          <div class="plate" data-plate="during">
+            <picture class="layer layer-sky">
+              <source type="image/webp" srcset="img/hero-during-640.webp 640w, img/hero-during-1024.webp 1024w, img/hero-during-1600.webp 1600w, img/hero-during-2048.webp 2048w" sizes="100vw">
+              <img src="img/hero-during-1600.jpg" srcset="img/hero-during-640.jpg 640w, img/hero-during-1024.jpg 1024w, img/hero-during-1600.jpg 1600w, img/hero-during-2048.jpg 2048w" sizes="100vw" width="2048" height="1152" alt="The same lot cleared and being graded, red earth, an excavator and a dozer at work" loading="lazy">
+            </picture>
+            <picture class="layer layer-ground" aria-hidden="true">
+              <source type="image/webp" srcset="img/hero-during-640.webp 640w, img/hero-during-1024.webp 1024w, img/hero-during-1600.webp 1600w, img/hero-during-2048.webp 2048w" sizes="100vw">
+              <img src="img/hero-during-1600.jpg" srcset="img/hero-during-640.jpg 640w, img/hero-during-1024.jpg 1024w, img/hero-during-1600.jpg 1600w, img/hero-during-2048.jpg 2048w" sizes="100vw" width="2048" height="1152" alt="" loading="lazy">
+            </picture>
+          </div>
+          <div class="plate" data-plate="after">
+            <picture class="layer layer-sky">
+              <source type="image/webp" srcset="img/hero-after-640.webp 640w, img/hero-after-1024.webp 1024w, img/hero-after-1600.webp 1600w, img/hero-after-2048.webp 2048w" sizes="100vw">
+              <img src="img/hero-after-1600.jpg" srcset="img/hero-after-640.jpg 640w, img/hero-after-1024.jpg 1024w, img/hero-after-1600.jpg 1600w, img/hero-after-2048.jpg 2048w" sizes="100vw" width="2048" height="1152" alt="The finished lot: a long stone retaining wall with brick steps holding a level pad" loading="lazy">
+            </picture>
+            <picture class="layer layer-ground" aria-hidden="true">
+              <source type="image/webp" srcset="img/hero-after-640.webp 640w, img/hero-after-1024.webp 1024w, img/hero-after-1600.webp 1600w, img/hero-after-2048.webp 2048w" sizes="100vw">
+              <img src="img/hero-after-1600.jpg" srcset="img/hero-after-640.jpg 640w, img/hero-after-1024.jpg 1024w, img/hero-after-1600.jpg 1600w, img/hero-after-2048.jpg 2048w" sizes="100vw" width="2048" height="1152" alt="" loading="lazy">
+            </picture>
+          </div>
+        </div>
+        <div class="mist" aria-hidden="true"></div>
+        <canvas class="rain" id="rain" aria-hidden="true"></canvas>
+        <div class="frame-scrim" aria-hidden="true"></div>
+        <div class="frame-copy">
+          <p class="kicker" data-load style="--d:300ms">Masonry · Land clearing · Grading</p>
+          <h1 class="hero-title" id="h-home" data-load style="--d:420ms">From cleared lot<br> to finished wall</h1>
+          <p class="hero-sub" data-load style="--d:560ms">Masonry, land clearing, and grading from one crew. Free on-site estimates.</p>
+          <a class="btn btn-hero" href="#estimate" data-load style="--d:700ms">Request an estimate</a>
+        </div>
+      </div>
+      <ol class="stage-caps" aria-label="The lot, in three states">
+        <li class="stage-cap is-on" data-plate="before"><span class="cap-k">Before</span><span class="cap-t">A wooded lot, stakes in</span></li>
+        <li class="stage-cap" data-plate="during"><span class="cap-k">During</span><span class="cap-t">Cleared, cut, and compacted</span></li>
+        <li class="stage-cap" data-plate="after"><span class="cap-k">After</span><span class="cap-t">The wall on finished grade</span></li>
+      </ol>
+      <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><i></i></div>
     </div>
-    <div class="hero-row">
-      <p class="hero-line" data-load style="--d:420ms">Masonry, land clearing, and grading from one crew. Free on-site estimates.</p>
-    </div>
-    <h1 class="monument" id="h-home"><span class="fit" data-fit translate="no">C&amp;W<br class="br"> Masonry</span></h1>
   </section>
 
+  <!-- Scroll-driven words over the macro details -->
+  <section class="story" id="story" aria-label="What we do, in order">
+    <div class="story-stage">
+      <div class="story-bgs" aria-hidden="true">
+        <picture class="story-bg is-on" data-word="clear">
+          <source type="image/webp" srcset="img/detail-clear-640.webp 640w, img/detail-clear-1024.webp 1024w, img/detail-clear-1600.webp 1600w" sizes="100vw">
+          <img src="img/detail-clear-1600.jpg" srcset="img/detail-clear-640.jpg 640w, img/detail-clear-1024.jpg 1024w, img/detail-clear-1600.jpg 1600w" sizes="100vw" width="1600" height="906" alt="" loading="lazy">
+        </picture>
+        <picture class="story-bg" data-word="grade">
+          <source type="image/webp" srcset="img/detail-grade-640.webp 640w, img/detail-grade-1024.webp 1024w, img/detail-grade-1600.webp 1600w" sizes="100vw">
+          <img src="img/detail-grade-1600.jpg" srcset="img/detail-grade-640.jpg 640w, img/detail-grade-1024.jpg 1024w, img/detail-grade-1600.jpg 1600w" sizes="100vw" width="1600" height="906" alt="" loading="lazy">
+        </picture>
+        <picture class="story-bg" data-word="build">
+          <source type="image/webp" srcset="img/detail-brick-640.webp 640w, img/detail-brick-1024.webp 1024w, img/detail-brick-1600.webp 1600w" sizes="100vw">
+          <img src="img/detail-brick-1600.jpg" srcset="img/detail-brick-640.jpg 640w, img/detail-brick-1024.jpg 1024w, img/detail-brick-1600.jpg 1600w" sizes="100vw" width="1600" height="906" alt="" loading="lazy">
+        </picture>
+        <div class="story-scrim"></div>
+      </div>
+      <div class="story-words">
+        <div class="word is-on" data-word="clear"><span class="word-big">Clear</span><p class="word-line">Trees, brush, and stumps out. The ones you keep, fenced off before the first machine.</p></div>
+        <div class="word" data-word="grade"><span class="word-big">Grade</span><p class="word-line">Cut, fill, and compact in lifts, with the water running away from the house.</p></div>
+        <div class="word" data-word="build"><span class="word-big">Build</span><p class="word-line">Footings, walls, steps, and patios on the ground we prepared ourselves.</p></div>
+        <div class="word word-last" data-word="crew"><span class="word-big">One crew</span><p class="word-line">One estimate, one schedule, one crew responsible for where the ground and the wall meet.</p></div>
+      </div>
+      <div class="story-progress" aria-hidden="true"><i></i></div>
+    </div>
+  </section>
+
+  <!-- The order of work, as a slip, driven by two questions -->
   <section class="sec slip-sec wrap" id="how">
     <div class="grid">
       <div class="slip-copy">
-        <h2 data-reveal>Your job, in order</h2>
-        <p data-reveal style="--i:1">Pick where your lot stands today and what you want on it. The slip shows the order of the work and what you hold at the end.</p>
-        <form class="planner" id="planner" data-reveal style="--i:2">
+        <p class="kicker" data-reveal>Your job, in order</p>
+        <h2 data-reveal style="--i:1">Pick where your lot stands and what you want on it</h2>
+        <p class="lede" data-reveal style="--i:2">The slip shows the order of the work and what you hold at the end.</p>
+        <form class="planner" id="planner" data-reveal style="--i:3">
           <fieldset>
             <legend>Starting from</legend>
             <div class="choices">
@@ -521,8 +232,8 @@ main{position:relative;z-index:1;background:var(--bg)}
         </form>
       </div>
       <div class="slip-col">
-        <div class="slip" id="slip" data-reveal style="--i:1" aria-live="polite">
-          <div class="slip-head"><strong>C&amp;W Masonry</strong><span>Order of work</span></div>
+        <div class="slip" id="slip" data-reveal style="--i:2" aria-live="polite">
+          <div class="slip-head"><strong translate="no">C&amp;W Masonry</strong><span>Order of work</span></div>
           <h3>Before day one</h3>
           <div class="row"><span class="what">Site visit and written estimate</span><span class="leader"></span><span class="val">Free</span></div>
           <div class="row"><span class="what">Permits and 811 locates</span><span class="leader"></span><span class="val">Before digging</span></div>
@@ -540,34 +251,129 @@ main{position:relative;z-index:1;background:var(--bg)}
     </div>
     <div class="grid">
       <form class="estimate" id="estimate" novalidate>
-          <div class="est-head">
-            <h3>Send it for a free estimate</h3>
-            <p class="muted">No obligation. We will follow up to set a time for the site visit.</p>
+        <div class="est-head">
+          <h3>Send it for a free estimate</h3>
+          <p class="muted">No obligation. We will follow up to set a time for the site visit.</p>
+        </div>
+        <div class="est-a">
+          <div class="f"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+          <div class="f"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+          <div class="f"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"></div>
+          <div class="f"><label for="address">Property address or area</label><input id="address" name="address" type="text" autocomplete="street-address"></div>
+        </div>
+        <div class="est-b">
+          <div class="f"><label for="details">Anything else we should know</label><textarea id="details" name="details" placeholder="Size of the lot, timing, access, what is there now."></textarea></div>
+          <div id="form-error" class="note" hidden tabindex="-1" role="alert"></div>
+          <div id="form-fallback" class="note" hidden tabindex="-1" role="status">
+            <p>Copy this request and text or email it to us. We will set up the site visit.</p>
+            <pre id="summary-text"></pre>
+            <div class="note-actions"><button class="btn btn-quiet" type="button" id="copy-btn">Copy request</button><span id="copied-msg" hidden>Copied</span></div>
           </div>
-          <div class="est-a">
-            <div class="f"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
-            <div class="f"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
-            <div class="f"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"></div>
-            <div class="f"><label for="address">Property address or area</label><input id="address" name="address" type="text" autocomplete="street-address"></div>
-          </div>
-          <div class="est-b">
-            <div class="f"><label for="details">Anything else we should know</label><textarea id="details" name="details" placeholder="Size of the lot, timing, access, what is there now."></textarea></div>
-            <div id="form-error" class="note" hidden tabindex="-1" role="alert"></div>
-            <div id="form-fallback" class="note" hidden tabindex="-1" role="status">
-              <p>Copy this request and text or email it to us. We will set up the site visit.</p>
-              <pre id="summary-text"></pre>
-              <div class="note-actions"><button class="btn btn-quiet" type="button" id="copy-btn">Copy request</button><span id="copied-msg" hidden>Copied</span></div>
-            </div>
-            <button class="btn" type="submit" id="submit-btn">Request an estimate</button>
-          </div>
-        </form>
+          <button class="btn" type="submit" id="submit-btn">Request an estimate</button>
+        </div>
+      </form>
     </div>
   </section>
 
-  <section class="index-sec wrap" id="services">
+  <!-- Pinned showcase: three trades stack as you scroll -->
+  <section class="showcase wrap" id="showcase" aria-labelledby="h-showcase">
+    <div class="showcase-head">
+      <p class="kicker" data-reveal>Three trades</p>
+      <h2 id="h-showcase" data-reveal style="--i:1">The ground and the wall, from one crew</h2>
+    </div>
+    <div class="cards" id="cards">
+      <a class="card" href="#clearing" data-view="clearing">
+        <picture class="card-pic">
+          <source type="image/webp" srcset="img/hero-during-640.webp 640w, img/hero-during-1024.webp 1024w, img/hero-during-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 60vw">
+          <img src="img/hero-during-1024.jpg" srcset="img/hero-during-640.jpg 640w, img/hero-during-1024.jpg 1024w, img/hero-during-1600.jpg 1600w" sizes="(max-width: 900px) 100vw, 60vw" width="2048" height="1152" alt="" loading="lazy">
+        </picture>
+        <div class="card-copy">
+          <span class="kicker">Land clearing</span>
+          <h3>Lots and acreage cleared and ready to build</h3>
+          <p>Brush, trees, stumps, and debris out, the trees you want kept fenced off, silt fence and a gravel entrance in before the first machine starts.</p>
+          <span class="card-link">See the clearing work</span>
+        </div>
+      </a>
+      <a class="card" href="#grading" data-view="grading">
+        <picture class="card-pic">
+          <source type="image/webp" srcset="img/detail-grade-640.webp 640w, img/detail-grade-1024.webp 1024w, img/detail-grade-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 60vw">
+          <img src="img/detail-grade-1024.jpg" srcset="img/detail-grade-640.jpg 640w, img/detail-grade-1024.jpg 1024w, img/detail-grade-1600.jpg 1600w" sizes="(max-width: 900px) 100vw, 60vw" width="1600" height="906" alt="" loading="lazy">
+        </picture>
+        <div class="card-copy">
+          <span class="kicker">Grading</span>
+          <h3>Ground shaped for drainage and a solid build</h3>
+          <p>Pads, driveways, yards, and drainage fixes, cut and filled in compacted lifts and checked with a laser, so nothing settles and nothing pools.</p>
+          <span class="card-link">See the grading work</span>
+        </div>
+      </a>
+      <a class="card" href="#masonry" data-view="masonry">
+        <picture class="card-pic">
+          <source type="image/webp" srcset="img/hero-after-640.webp 640w, img/hero-after-1024.webp 1024w, img/hero-after-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 60vw">
+          <img src="img/hero-after-1024.jpg" srcset="img/hero-after-640.jpg 640w, img/hero-after-1024.jpg 1024w, img/hero-after-1600.jpg 1600w" sizes="(max-width: 900px) 100vw, 60vw" width="2048" height="1152" alt="" loading="lazy">
+        </picture>
+        <div class="card-copy">
+          <span class="kicker">Masonry</span>
+          <h3>Brick, block, and stone built to last, from the footing up</h3>
+          <p>Retaining walls, foundations, steps, patios, veneer, and chimneys, built by the crew that prepared the ground under them.</p>
+          <span class="card-link">See the masonry work</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Metrics on concrete -->
+  <section class="metrics" id="metrics" aria-label="C&amp;W in numbers">
+    <div class="wrap metrics-grid">
+      <div class="metric" data-reveal><span class="metric-n"><span data-count="3">0</span></span><span class="metric-l">Trades under one crew</span></div>
+      <div class="metric" data-reveal style="--i:1"><span class="metric-n"><span data-count="24">0</span></span><span class="metric-l">Kinds of work we take on</span></div>
+      <div class="metric" data-reveal style="--i:2"><span class="metric-n"><span data-count="44">0</span></span><span class="metric-l">Steps written into every estimate</span></div>
+      <div class="metric" data-reveal style="--i:3"><span class="metric-n"><mark class="ph">[Years]</mark></span><span class="metric-l">Years in business</span></div>
+    </div>
+  </section>
+
+  <!-- Editorial grid: about, quote, studio -->
+  <section class="about wrap" id="about" aria-labelledby="h-about">
+    <div class="about-grid" id="about-grid">
+      <figure class="about-fig" data-reveal>
+        <picture>
+          <source type="image/webp" srcset="img/hero-after-640.webp 640w, img/hero-after-1024.webp 1024w, img/hero-after-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 50vw">
+          <img src="img/hero-after-1024.jpg" srcset="img/hero-after-640.jpg 640w, img/hero-after-1024.jpg 1024w, img/hero-after-1600.jpg 1600w" sizes="(max-width: 900px) 100vw, 50vw" width="2048" height="1152" alt="A new stone retaining wall and brick steps at dusk" loading="lazy">
+        </picture>
+        <figcaption>Fieldstone wall with a brick cap, on a pad we cleared and graded</figcaption>
+      </figure>
+      <div class="about-copy" data-reveal style="--i:1">
+        <p class="kicker">About C&amp;W</p>
+        <h2 id="h-about">Where the ground and the wall meet</h2>
+        <p class="statement">C&amp;W Masonry, LLC is a <mark class="ph">[City, State]</mark> contractor that clears the lot, grades it, and builds the brick, block, and stone on top of it. One estimate, one schedule, and one crew responsible for where the ground and the wall meet.</p>
+      </div>
+      <blockquote class="quote" data-reveal style="--i:2">
+        <p><mark class="ph">[A sentence from the owner about how the crew works, in their own words.]</mark></p>
+        <cite><mark class="ph">[Owner name]</mark>, C&amp;W Masonry, LLC</cite>
+      </blockquote>
+      <address class="studio" data-reveal style="--i:3">
+        <span class="kicker">Studio</span>
+        <span translate="no">C&amp;W Masonry, LLC</span>
+        <span><mark class="ph">[Street address]</mark></span>
+        <span><mark class="ph">[City, State ZIP]</mark></span>
+        <span><mark class="ph">[Phone number]</mark></span>
+        <span><mark class="ph">[Email address]</mark></span>
+      </address>
+      <dl class="facts" data-reveal style="--i:4">
+        <div><dt>Licence</dt><dd><mark class="ph">[License number]</mark></dd></div>
+        <div><dt>Insurance</dt><dd><mark class="ph">[Insurance details]</mark></dd></div>
+        <div><dt>Hours</dt><dd><mark class="ph">[Mon to Fri, 7 am to 5 pm]</mark></dd></div>
+        <div><dt>Languages</dt><dd>English and Spanish</dd></div>
+        <div><dt>Estimates</dt><dd>Free, on site, in writing</dd></div>
+        <div><dt>Before digging</dt><dd>811 locates, every job</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- The 24 jobs -->
+  <section class="index-sec wrap" id="services" aria-labelledby="h-services">
     <div class="grid index-head">
-      <h2 data-reveal>What we do</h2>
-      <p class="index-desc" id="index-desc" aria-live="polite" data-reveal style="--i:1">Twenty-four jobs in three trades. Each one is sized at the site visit and written into your estimate.</p>
+      <div class="index-title"><p class="kicker" data-reveal>What we do</p><h2 id="h-services" data-reveal style="--i:1">Twenty-four jobs in three trades</h2></div>
+      <p class="index-desc" id="index-desc" aria-live="polite" data-reveal style="--i:2">Each one is sized at the site visit and written into your estimate.</p>
     </div>
     <div class="grid index">
       <div class="group" data-reveal style="--i:0">
@@ -588,69 +394,52 @@ main{position:relative;z-index:1;background:var(--bg)}
     </div>
   </section>
 
-  <figure class="band" data-reveal>
-    <img src="img/masonry.jpg" width="640" height="480" alt="A mason in a hard hat and safety glasses laying a brick with a trowel" loading="lazy">
-    <figcaption>Brickwork laid in running bond</figcaption>
-  </figure>
-
-  <section class="about-sec field-paper wrap" id="about">
-    <div class="about-row">
-      <dl class="facts" data-reveal>
-        <div><dt>Based in</dt><dd><mark class="ph">[City, State]</mark></dd></div>
-        <div><dt>Service area</dt><dd><mark class="ph">[Counties or cities you serve]</mark></dd></div>
-        <div><dt>Established</dt><dd><mark class="ph">[Year]</mark></dd></div>
-      </dl>
-      <div class="about-main">
-        <h2 data-reveal>About C&amp;W</h2>
-        <p class="statement" data-reveal style="--i:1">C&amp;W Masonry, LLC is a <mark class="ph">[City, State]</mark> contractor that clears the lot, grades it, and builds the brick, block, and stone on top of it. One estimate, one schedule, and one crew responsible for where the ground and the wall meet.</p>
-      </div>
-    </div>
-    <div class="about-row row2">
-      <span class="word" data-reveal>Details</span>
-      <ul class="rec" data-reveal style="--i:1">
-        <li><span>Licence</span><span><mark class="ph">[License number]</mark></span></li>
-        <li><span>Insurance</span><span><mark class="ph">[Insurance details]</mark></span></li>
-        <li><span>Hours</span><span><mark class="ph">[Mon to Fri, 7 am to 5 pm]</mark></span></li>
-        <li><span>Languages</span><span>English and Spanish</span></li>
-        <li><span>Estimates</span><span>Free, on site, in writing</span></li>
-        <li><span>Before digging</span><span>811 locates, every job</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="faq-sec wrap" id="faq">
-    <h2 data-reveal>Before you call</h2>
+  <section class="faq-sec wrap" id="faq" aria-labelledby="h-faq">
+    <p class="kicker" data-reveal>Before you call</p>
+    <h2 id="h-faq" data-reveal style="--i:1">Questions we get on the phone</h2>
     <div class="faq-list"><details class="q" data-reveal style="--i:0"><summary>Are estimates really free?</summary><div class="a"><p>Yes. We come out, walk the property with you, and follow up with a written estimate. There is no charge and no obligation.</p></div></details><details class="q" data-reveal style="--i:1"><summary>Can you clear and grade a lot and then build on it?</summary><div class="a"><p>That is the whole idea. We clear the land, grade it for drainage and a solid base, and build the footings, walls, steps, or patio on top of it, with one estimate and one schedule.</p></div></details><details class="q" data-reveal style="--i:2"><summary>Do you handle permits and utility locates?</summary><div class="a"><p>We call 811 before any digging so underground lines are marked, and we tell you up front which permits the job needs and what is required to get them.</p></div></details><details class="q" data-reveal style="--i:0"><summary>How soon can you start?</summary><div class="a"><p>It depends on the season and the size of the job. Your estimate will include a start window, and we will tell you if that changes.</p></div></details><details class="q" data-reveal style="--i:1"><summary>Are you licensed and insured?</summary><div class="a"><p>Yes. Our license and insurance details are listed in the <a href="#about">About</a> section, and we can provide certificates on request.</p></div></details><details class="q" data-reveal style="--i:2"><summary>What areas do you serve?</summary><div class="a"><p><mark class="ph">[Your service area]</mark>. If you are near the edge of it, ask. We will tell you on the phone.</p></div></details></div>
   </section>
 
-  <figure class="band" data-reveal>
-    <img src="img/scene-grading.jpg" width="1024" height="559" alt="An excavator shaping a dirt pad on a grading site" loading="lazy">
-    <figcaption>Cutting a building pad to grade</figcaption>
-  </figure>
-
-  <section class="contact-sec field-brick" id="contact" aria-labelledby="contact-ask">
-    <p class="contact-ask" id="contact-ask" data-reveal>Tell us about the lot and what you want built.</p>
-    <a class="contact-mail" id="contact-mail" href="#estimate" data-reveal style="--i:1"><span class="fit" data-fit><mark class="ph">[your email address]</mark></span></a>
-    <div class="contact-foot" data-reveal style="--i:2">
-      <div><span><mark class="ph">[Phone number]</mark></span><span><mark class="ph">[City, State]</mark></span></div>
-      <div><a href="#estimate">Request form</a><a href="#masonry">Masonry</a><a href="#clearing">Land clearing</a><a href="#grading">Grading</a></div>
+  <section class="contact-sec" id="contact" aria-labelledby="contact-ask">
+    <div class="contact-bg" aria-hidden="true">
+      <picture>
+        <source type="image/webp" srcset="img/hero-before-640.webp 640w, img/hero-before-1024.webp 1024w, img/hero-before-1600.webp 1600w, img/hero-before-2048.webp 2048w" sizes="100vw">
+        <img src="img/hero-before-1600.jpg" srcset="img/hero-before-640.jpg 640w, img/hero-before-1024.jpg 1024w, img/hero-before-1600.jpg 1600w, img/hero-before-2048.jpg 2048w" sizes="100vw" width="2048" height="1152" alt="" loading="lazy">
+      </picture>
+    </div>
+    <div class="contact-inner wrap">
+      <p class="kicker" data-reveal>Start here</p>
+      <p class="contact-ask" id="contact-ask" data-reveal style="--i:1">Tell us about the lot and what you want built.</p>
+      <a class="contact-mail" id="contact-mail" href="#estimate" data-reveal style="--i:2"><span class="fit" data-fit><mark class="ph">[your email address]</mark></span></a>
+      <div class="contact-foot" data-reveal style="--i:3">
+        <div><span><mark class="ph">[Phone number]</mark></span><span><mark class="ph">[City, State]</mark></span></div>
+        <div><a href="#estimate">Request form</a><a href="#masonry">Masonry</a><a href="#clearing">Land clearing</a><a href="#grading">Grading</a></div>
+      </div>
     </div>
   </section>
 </div>
 
 <!-- ============ MASONRY ============ -->
 <div class="view" id="view-masonry" hidden>
-  <section class="hero hero-tab field-brick" style="--hero-field:#6e2a1f" aria-labelledby="h-masonry">
-    <div class="hero-pics" aria-hidden="true"><img class="is-on" src="img/masonry.jpg" width="640" height="480" alt="" loading="lazy" style="object-position:50% 30%"></div>
-    <div class="hero-row">
-      <p class="hero-line">Brick, block, and stone built to last, from the footing up.</p>
+  <section class="hero hero-tab" aria-labelledby="h-masonry">
+    <div class="hero-stage">
+      <div class="hero-back" aria-hidden="true"><span class="hero-back-line">Masonry</span></div>
+      <div class="frame frame-tab">
+        <div class="plates"><div class="plate is-on"><picture class="layer layer-sky"><source type="image/webp" srcset="img/detail-brick-640.webp 640w, img/detail-brick-1024.webp 1024w, img/detail-brick-1600.webp 1600w" sizes="100vw"><img src="img/detail-brick-1600.jpg" srcset="img/detail-brick-640.jpg 640w, img/detail-brick-1024.jpg 1024w, img/detail-brick-1600.jpg 1600w" sizes="100vw" width="1600" height="906" alt="A mason tooling a mortar joint on a fresh course of brick" loading="lazy"></picture></div></div>
+        <div class="frame-scrim" aria-hidden="true"></div>
+        <div class="frame-copy">
+          <p class="kicker">Masonry</p>
+          <h1 class="hero-title" id="h-masonry">Brick, block, and stone, from the footing up</h1>
+          <p class="hero-sub">Retaining walls, foundations, steps, patios, veneer, and chimneys, built to last.</p>
+          <a class="btn btn-hero" href="#estimate">Request an estimate</a>
+        </div>
+      </div>
     </div>
-    <h1 class="monument" id="h-masonry"><span class="fit" data-fit>Masonry</span></h1>
   </section>
 
   <section class="sec list-sec wrap">
     <div class="grid">
-      <h2 data-reveal>What we build</h2>
+      <div class="sec-title"><p class="kicker" data-reveal>What we build</p><h2 data-reveal style="--i:1">Eight kinds of masonry work</h2></div>
       <div class="rows"><div class="rowx" data-reveal style="--i:0"><h3>Foundations and footings</h3><p>Poured footings and block or brick foundation walls for additions, garages, porches, and outbuildings.</p></div><div class="rowx" data-reveal style="--i:1"><h3>Retaining walls</h3><p>Block and stone walls with a proper footing, gravel backfill, drainage, and reinforcement, so they hold for decades.</p></div><div class="rowx" data-reveal style="--i:2"><h3>Steps, stoops, and walkways</h3><p>Brick and stone steps, front stoops, and paths set on a compacted base so they stay level.</p></div><div class="rowx" data-reveal style="--i:3"><h3>Patios and outdoor living</h3><p>Brick and paver patios, seat walls, fire pits, and bases for outdoor kitchens.</p></div><div class="rowx" data-reveal style="--i:0"><h3>Chimneys and fireplaces</h3><p>New chimneys, rebuilds above the roofline, crowns, caps, and firebox repairs.</p></div><div class="rowx" data-reveal style="--i:1"><h3>Brick and stone veneer</h3><p>Veneer over framed walls and foundations, with the flashing, weep holes, and wall ties that keep water out.</p></div><div class="rowx" data-reveal style="--i:2"><h3>Repairs and tuckpointing</h3><p>Cracked or spalled units replaced, failing mortar raked out and repointed to match the original.</p></div><div class="rowx" data-reveal style="--i:3"><h3>Garden and privacy walls</h3><p>Freestanding brick and block walls, columns, and mailbox and sign bases.</p></div></div>
     </div>
   </section>
@@ -658,8 +447,9 @@ main{position:relative;z-index:1;background:var(--bg)}
   <section class="sec fig-sec wrap">
     <div class="grid">
       <div class="fig-head">
-        <h2 data-reveal>Anatomy of a retaining wall</h2>
-        <p class="lede" data-reveal style="--i:1">Most of what makes a wall last is behind it and under it. This is what goes into every one we build.</p>
+        <p class="kicker" data-reveal>Cutaway</p>
+        <h2 data-reveal style="--i:1">Anatomy of a retaining wall</h2>
+        <p class="lede" data-reveal style="--i:2">Most of what makes a wall last is behind it and under it. This is what goes into every one we build.</p>
       </div>
       <div class="fig-wrap" data-reveal style="--i:1">
         <div class="fig-scroll"><svg viewBox="0 0 640 400" role="img" aria-label="Cross-section of a block retaining wall showing cap, wall, geogrid, gravel backfill, drain pipe, weep hole, and footing">
@@ -744,7 +534,7 @@ main{position:relative;z-index:1;background:var(--bg)}
 
   <section class="sec steps-sec field-paper wrap">
     <div class="grid">
-      <h2 data-reveal>How a masonry job goes</h2>
+      <div class="sec-title"><p class="kicker" data-reveal>Process</p><h2 data-reveal style="--i:1">How a masonry job goes</h2></div>
       <div class="scenes" data-reveal style="--i:1">
         <div class="scene-card">
           <svg viewBox="0 0 360 200" role="img" aria-label="Footing trench with rebar and poured concrete, string lines set on batter boards">
@@ -780,32 +570,41 @@ main{position:relative;z-index:1;background:var(--bg)}
   </section>
 
   <section class="faq-sec wrap">
-    <h2 data-reveal>About masonry work</h2>
+    <p class="kicker" data-reveal>Questions</p>
+    <h2 data-reveal style="--i:1">About masonry work</h2>
     <div class="faq-list"><details class="q" data-reveal style="--i:0"><summary>How long before I can use a new wall, patio, or steps?</summary><div class="a"><p>Mortar sets within a day but keeps gaining strength for about four weeks. Light use is fine after a few days; we will tell you when it is safe to load a retaining wall, put furniture on a patio, or backfill against new work.</p></div></details><details class="q" data-reveal style="--i:1"><summary>Can you match the existing brick on a repair or addition?</summary><div class="a"><p>Usually, yes. We match brick size, color range, and texture from samples, and we match the mortar color and joint profile, which is what most people notice. Older brick that is no longer made can often be sourced as salvage.</p></div></details><details class="q" data-reveal style="--i:2"><summary>Does a retaining wall need a permit?</summary><div class="a"><p>Often, once it passes a certain height (commonly around 4 feet) or supports a load such as a driveway. Rules vary by county and city. We check before quoting and tell you what applies to your wall.</p></div></details><details class="q" data-reveal style="--i:0"><summary>Why do some walls crack or bulge after a few years?</summary><div class="a"><p>Almost always water or a weak base: no drainage behind a retaining wall, a footing that was too shallow, or soil that was never compacted. That is why our process puts footings, drainage, and reinforcement ahead of the first course of brick.</p></div></details></div>
   </section>
 
   <section class="sec next-sec wrap">
     <div class="grid">
-      <h2 data-reveal>Get the ground right first</h2>
-      <a class="pair" href="#clearing" data-reveal style="--i:1"><img src="img/clearing-wide.jpg" width="745" height="559" alt="" loading="lazy"><span class="pair-t"><strong>Land clearing</strong><span>Trees, brush, and stumps out before the footings go in.</span></span></a>
-      <a class="pair" href="#grading" data-reveal style="--i:2"><img src="img/grading.jpg" width="925" height="559" alt="" loading="lazy"><span class="pair-t"><strong>Grading</strong><span>A level, compacted, well-drained base under every wall and patio.</span></span></a>
+      <div class="sec-title"><p class="kicker" data-reveal>Next</p><h2 data-reveal style="--i:1">Get the ground right first</h2></div>
+      <a class="pair" href="#clearing" data-reveal style="--i:1"><picture><source type="image/webp" srcset="img/hero-during-640.webp 640w, img/hero-during-1024.webp 1024w" sizes="(max-width: 700px) 100vw, 50vw"><img src="img/hero-during-1024.jpg" width="2048" height="1152" alt="" loading="lazy"></picture><span class="pair-t"><strong>Land clearing</strong><span>Trees, brush, and stumps out before the footings go in.</span></span></a>
+      <a class="pair" href="#grading" data-reveal style="--i:2"><picture><source type="image/webp" srcset="img/detail-grade-640.webp 640w, img/detail-grade-1024.webp 1024w" sizes="(max-width: 700px) 100vw, 50vw"><img src="img/detail-grade-1024.jpg" width="1600" height="906" alt="" loading="lazy"></picture><span class="pair-t"><strong>Grading</strong><span>A level, compacted, well-drained base under every wall and patio.</span></span></a>
     </div>
   </section>
 </div>
 
 <!-- ============ LAND CLEARING ============ -->
 <div class="view" id="view-clearing" hidden>
-  <section class="hero hero-tab" style="--hero-field:#0f1f10" aria-labelledby="h-clearing">
-    <div class="hero-pics" aria-hidden="true"><img class="is-on" src="img/scene-clearing.jpg" width="1024" height="559" alt="" loading="lazy"></div>
-    <div class="hero-row">
-      <p class="hero-line">Lots and acreage cleared and ready to build, with the trees you keep fenced off.</p>
+  <section class="hero hero-tab" aria-labelledby="h-clearing">
+    <div class="hero-stage">
+      <div class="hero-back" aria-hidden="true"><span class="hero-back-line" data-es="Desmonte">Clearing</span></div>
+      <div class="frame frame-tab">
+        <div class="plates"><div class="plate is-on"><picture class="layer layer-sky"><source type="image/webp" srcset="img/hero-during-640.webp 640w, img/hero-during-1024.webp 1024w, img/hero-during-1600.webp 1600w, img/hero-during-2048.webp 2048w" sizes="100vw"><img src="img/hero-during-1600.jpg" srcset="img/hero-during-640.jpg 640w, img/hero-during-1024.jpg 1024w, img/hero-during-1600.jpg 1600w, img/hero-during-2048.jpg 2048w" sizes="100vw" width="2048" height="1152" alt="A lot being cleared at dusk, an excavator and dozer on fresh red earth" loading="lazy"></picture></div></div>
+        <div class="frame-scrim" aria-hidden="true"></div>
+        <div class="frame-copy">
+          <p class="kicker">Land clearing</p>
+          <h1 class="hero-title" id="h-clearing">Lots and acreage, cleared and ready to build</h1>
+          <p class="hero-sub">With the trees you keep fenced off before the first machine arrives.</p>
+          <a class="btn btn-hero" href="#estimate">Request an estimate</a>
+        </div>
+      </div>
     </div>
-    <h1 class="monument" id="h-clearing"><span class="fit" data-fit data-es="Desmonte">Land<br class="br"> clearing</span></h1>
   </section>
 
   <section class="sec list-sec wrap">
     <div class="grid">
-      <h2 data-reveal>What we clear</h2>
+      <div class="sec-title"><p class="kicker" data-reveal>What we clear</p><h2 data-reveal style="--i:1">Eight kinds of clearing work</h2></div>
       <div class="rows"><div class="rowx" data-reveal style="--i:0"><h3>Lot clearing for new construction</h3><p>House sites, garages, and outbuildings cleared to the limits of the plan, with the building pad left ready to grade.</p></div><div class="rowx" data-reveal style="--i:1"><h3>Acreage and pasture reclamation</h3><p>Overgrown fields, fence lines, and wood edges brought back to usable land.</p></div><div class="rowx" data-reveal style="--i:2"><h3>Tree and brush removal</h3><p>Selective or complete removal, with the trees you want kept flagged and protected.</p></div><div class="rowx" data-reveal style="--i:3"><h3>Stump grinding and removal</h3><p>Ground below grade for lawns, or pulled out entirely where a foundation, driveway, or septic field will go.</p></div><div class="rowx" data-reveal style="--i:0"><h3>Forestry mulching</h3><p>Brush and small trees ground in place into a layer of mulch. No piles, no burning, no haul-off.</p></div><div class="rowx" data-reveal style="--i:1"><h3>Driveways, fence lines, and right-of-way</h3><p>Corridors cleared for a new driveway, utility run, or property-line fence.</p></div><div class="rowx" data-reveal style="--i:2"><h3>Debris haul-off and site cleanup</h3><p>Logs, brush, and buried debris loaded and hauled, or burned where permitted, leaving a clean site.</p></div><div class="rowx" data-reveal style="--i:3"><h3>Old structures and foundations</h3><p>Sheds, old slabs, and leftover foundations broken up and removed with the rest of the clearing.</p></div></div>
     </div>
   </section>
@@ -813,8 +612,9 @@ main{position:relative;z-index:1;background:var(--bg)}
   <section class="sec fig-sec wrap">
     <div class="grid">
       <div class="fig-head">
-        <h2 data-reveal>How we keep the trees you want</h2>
-        <p class="lede" data-reveal style="--i:1">A tree is killed more often by crushed roots than by a saw. The fence goes up before the first machine arrives.</p>
+        <p class="kicker" data-reveal>Tree protection</p>
+        <h2 data-reveal style="--i:1">How we keep the trees you want</h2>
+        <p class="lede" data-reveal style="--i:2">A tree is killed more often by crushed roots than by a saw. The fence goes up before the first machine arrives.</p>
       </div>
       <div class="fig-wrap" data-reveal style="--i:1">
         <div class="fig-scroll"><svg viewBox="0 0 640 360" role="img" aria-label="A kept tree with its dripline marked, roots spreading past it, a protection fence beyond the dripline, and equipment and a stockpile kept outside the fence">
@@ -905,7 +705,7 @@ main{position:relative;z-index:1;background:var(--bg)}
 
   <section class="sec steps-sec field-paper wrap">
     <div class="grid">
-      <h2 data-reveal>How a land clearing job goes</h2>
+      <div class="sec-title"><p class="kicker" data-reveal>Process</p><h2 data-reveal style="--i:1">How a land clearing job goes</h2></div>
       <div class="scenes" data-reveal style="--i:1">
         <div class="scene-card">
           <svg viewBox="0 0 360 200" role="img" aria-label="Overgrown lot with trees, brush, stumps, a fallen log, and an old shed">
@@ -945,32 +745,41 @@ main{position:relative;z-index:1;background:var(--bg)}
   </section>
 
   <section class="faq-sec wrap">
-    <h2 data-reveal>About land clearing</h2>
+    <p class="kicker" data-reveal>Questions</p>
+    <h2 data-reveal style="--i:1">About land clearing</h2>
     <div class="faq-list"><details class="q" data-reveal style="--i:0"><summary>Do I need a permit to clear my own land?</summary><div class="a"><p>Sometimes. Many counties require a land-disturbance permit above a certain area, and some cities have tree ordinances that protect larger trees. Stream and wetland buffers have their own rules. We check what applies to your parcel before we quote.</p></div></details><details class="q" data-reveal style="--i:1"><summary>What happens to the stumps?</summary><div class="a"><p>It depends on what the land is for. In a lawn or pasture, grinding them below grade is enough. Under a building pad, driveway, or septic field, the whole stump and its roots come out, because buried wood rots and the ground above it settles.</p></div></details><details class="q" data-reveal style="--i:2"><summary>Can you save specific trees?</summary><div class="a"><p>Yes. We flag them on the walk, fence off the root zone, and keep equipment and stockpiles off it. Roots extend well past the canopy, so the protection zone is larger than most people expect.</p></div></details><details class="q" data-reveal style="--i:0"><summary>How long does clearing take?</summary><div class="a"><p>A typical building lot takes a day or two. Acreage with large trees and haul-off takes longer. The estimate includes a schedule for your site.</p></div></details></div>
   </section>
 
   <section class="sec next-sec wrap">
     <div class="grid">
-      <h2 data-reveal>What usually comes next</h2>
-      <a class="pair" href="#grading" data-reveal style="--i:1"><img src="img/grading.jpg" width="925" height="559" alt="" loading="lazy"><span class="pair-t"><strong>Grading</strong><span>Shape the cleared ground for drainage and a solid pad.</span></span></a>
-      <a class="pair" href="#masonry" data-reveal style="--i:2"><img src="img/masonry.jpg" width="640" height="480" alt="" loading="lazy"><span class="pair-t"><strong>Masonry</strong><span>Footings, walls, and steps built on the ground we prepared.</span></span></a>
+      <div class="sec-title"><p class="kicker" data-reveal>Next</p><h2 data-reveal style="--i:1">What usually comes next</h2></div>
+      <a class="pair" href="#grading" data-reveal style="--i:1"><picture><source type="image/webp" srcset="img/detail-grade-640.webp 640w, img/detail-grade-1024.webp 1024w" sizes="(max-width: 700px) 100vw, 50vw"><img src="img/detail-grade-1024.jpg" width="1600" height="906" alt="" loading="lazy"></picture><span class="pair-t"><strong>Grading</strong><span>Shape the cleared ground for drainage and a solid pad.</span></span></a>
+      <a class="pair" href="#masonry" data-reveal style="--i:2"><picture><source type="image/webp" srcset="img/hero-after-640.webp 640w, img/hero-after-1024.webp 1024w" sizes="(max-width: 700px) 100vw, 50vw"><img src="img/hero-after-1024.jpg" width="2048" height="1152" alt="" loading="lazy"></picture><span class="pair-t"><strong>Masonry</strong><span>Footings, walls, and steps built on the ground we prepared.</span></span></a>
     </div>
   </section>
 </div>
 
 <!-- ============ GRADING ============ -->
 <div class="view" id="view-grading" hidden>
-  <section class="hero hero-tab field-clay" style="--hero-field:#8c5a3c" aria-labelledby="h-grading">
-    <div class="hero-pics" aria-hidden="true"><img class="is-on" src="img/scene-grading.jpg" width="1024" height="559" alt="" loading="lazy"></div>
-    <div class="hero-row">
-      <p class="hero-line">Ground shaped for drainage and a solid build, compacted in lifts.</p>
+  <section class="hero hero-tab" aria-labelledby="h-grading">
+    <div class="hero-stage">
+      <div class="hero-back" aria-hidden="true"><span class="hero-back-line">Grading</span></div>
+      <div class="frame frame-tab">
+        <div class="plates"><div class="plate is-on"><picture class="layer layer-sky"><source type="image/webp" srcset="img/detail-grade-640.webp 640w, img/detail-grade-1024.webp 1024w, img/detail-grade-1600.webp 1600w" sizes="100vw"><img src="img/detail-grade-1600.jpg" srcset="img/detail-grade-640.jpg 640w, img/detail-grade-1024.jpg 1024w, img/detail-grade-1600.jpg 1600w" sizes="100vw" width="1600" height="906" alt="A laser grade receiver on a rod in freshly compacted red clay, a roller behind" loading="lazy"></picture></div></div>
+        <div class="frame-scrim" aria-hidden="true"></div>
+        <div class="frame-copy">
+          <p class="kicker">Grading</p>
+          <h1 class="hero-title" id="h-grading">Ground shaped for drainage and a solid build</h1>
+          <p class="hero-sub">Cut, fill, and compact in lifts, checked with a laser, water running away from the house.</p>
+          <a class="btn btn-hero" href="#estimate">Request an estimate</a>
+        </div>
+      </div>
     </div>
-    <h1 class="monument" id="h-grading"><span class="fit" data-fit>Grading</span></h1>
   </section>
 
   <section class="sec list-sec wrap">
     <div class="grid">
-      <h2 data-reveal>What we grade</h2>
+      <div class="sec-title"><p class="kicker" data-reveal>What we grade</p><h2 data-reveal style="--i:1">Eight kinds of grading work</h2></div>
       <div class="rows"><div class="rowx" data-reveal style="--i:0"><h3>Building pads</h3><p>House, garage, and shop pads cut to elevation, compacted in lifts, and tested where the plans call for it.</p></div><div class="rowx" data-reveal style="--i:1"><h3>Driveways and parking areas</h3><p>Subgrade shaped and compacted, base stone laid and crowned so the surface sheds water instead of holding it.</p></div><div class="rowx" data-reveal style="--i:2"><h3>Yard and lot regrading</h3><p>Low spots filled, slopes corrected, and the yard pitched away from the house.</p></div><div class="rowx" data-reveal style="--i:3"><h3>Drainage correction</h3><p>Swales, French drains, culverts, and catch basins that move water off the property instead of into the crawlspace.</p></div><div class="rowx" data-reveal style="--i:0"><h3>Cut and fill, site leveling</h3><p>Soil moved from high ground to low to reach the planned shape, with fill brought in or excess hauled out as needed.</p></div><div class="rowx" data-reveal style="--i:1"><h3>Backfill and compaction</h3><p>Foundations, retaining walls, and utility trenches backfilled in lifts and compacted so nothing settles later.</p></div><div class="rowx" data-reveal style="--i:2"><h3>Finish grading</h3><p>The final pass that brings the surface to exact elevation and even slopes, ready for seed, sod, or paving.</p></div><div class="rowx" data-reveal style="--i:3"><h3>Topsoil and stabilization</h3><p>Stockpiled topsoil spread back, then seed and straw, hydroseed, or sod to hold the ground.</p></div></div>
     </div>
   </section>
@@ -978,8 +787,9 @@ main{position:relative;z-index:1;background:var(--bg)}
   <section class="sec fig-sec wrap">
     <div class="grid">
       <div class="fig-head">
-        <h2 data-reveal>Grading that keeps a crawlspace dry</h2>
-        <p class="lede" data-reveal style="--i:1">Most wet crawlspaces and basements are a grading problem, not a waterproofing problem. This is the shape we grade toward.</p>
+        <p class="kicker" data-reveal>Drainage</p>
+        <h2 data-reveal style="--i:1">Grading that keeps a crawlspace dry</h2>
+        <p class="lede" data-reveal style="--i:2">Most wet crawlspaces and basements are a grading problem, not a waterproofing problem. This is the shape we grade toward.</p>
       </div>
       <div class="fig-wrap" data-reveal style="--i:1">
         <div class="fig-scroll"><svg viewBox="0 0 640 360" role="img" aria-label="House with ground graded to drop 6 inches in the first 10 feet, a downspout splash block, and a swale carrying water away; a dashed line shows the settled grade before">
@@ -1075,7 +885,7 @@ main{position:relative;z-index:1;background:var(--bg)}
 
   <section class="sec steps-sec field-paper wrap">
     <div class="grid">
-      <h2 data-reveal>How a grading job goes</h2>
+      <div class="sec-title"><p class="kicker" data-reveal>Process</p><h2 data-reveal style="--i:1">How a grading job goes</h2></div>
       <div class="scenes" data-reveal style="--i:1">
         <div class="scene-card">
           <svg viewBox="0 0 360 200" role="img" aria-label="Uneven site with grade stakes and a survey instrument">
@@ -1117,35 +927,38 @@ main{position:relative;z-index:1;background:var(--bg)}
   </section>
 
   <section class="faq-sec wrap">
-    <h2 data-reveal>About grading and drainage</h2>
+    <p class="kicker" data-reveal>Questions</p>
+    <h2 data-reveal style="--i:1">About grading and drainage</h2>
     <div class="faq-list"><details class="q" data-reveal style="--i:0"><summary>Why does water pool in my yard or run toward the house?</summary><div class="a"><p>Usually because the ground was never pitched away from the foundation, or because fill settled over the years and created low spots. Regrading the yard, and sometimes adding a swale or French drain, fixes the cause rather than the symptom.</p></div></details><details class="q" data-reveal style="--i:1"><summary>Can you fix drainage without regrading the whole yard?</summary><div class="a"><p>Often. A swale, a French drain, or a catch basin with a buried pipe can solve one wet area without disturbing the rest. We look at where the water comes from before recommending anything.</p></div></details><details class="q" data-reveal style="--i:2"><summary>Do you bring in fill dirt, and what kind?</summary><div class="a"><p>Yes, when the site needs more soil than it has. Under pads and driveways we use structural fill or crusher run that compacts well, and we keep topsoil for the surface only. The estimate shows the quantities.</p></div></details><details class="q" data-reveal style="--i:0"><summary>Will my building pad need a compaction test?</summary><div class="a"><p>Many building departments and engineers require one on fill pads. We compact in lifts to make it pass, and we can arrange the testing if your plans call for it.</p></div></details></div>
   </section>
 
   <section class="sec next-sec wrap">
     <div class="grid">
-      <h2 data-reveal>Before and after the grading</h2>
-      <a class="pair" href="#clearing" data-reveal style="--i:1"><img src="img/clearing-wide.jpg" width="745" height="559" alt="" loading="lazy"><span class="pair-t"><strong>Land clearing</strong><span>Trees, brush, and stumps out before the first cut.</span></span></a>
-      <a class="pair" href="#masonry" data-reveal style="--i:2"><img src="img/masonry.jpg" width="640" height="480" alt="" loading="lazy"><span class="pair-t"><strong>Masonry</strong><span>Footings, retaining walls, and steps built on the finished grade.</span></span></a>
+      <div class="sec-title"><p class="kicker" data-reveal>Next</p><h2 data-reveal style="--i:1">Before and after the grading</h2></div>
+      <a class="pair" href="#clearing" data-reveal style="--i:1"><picture><source type="image/webp" srcset="img/detail-clear-640.webp 640w, img/detail-clear-1024.webp 1024w" sizes="(max-width: 700px) 100vw, 50vw"><img src="img/detail-clear-1024.jpg" width="1600" height="906" alt="" loading="lazy"></picture><span class="pair-t"><strong>Land clearing</strong><span>Trees, brush, and stumps out before the first cut.</span></span></a>
+      <a class="pair" href="#masonry" data-reveal style="--i:2"><picture><source type="image/webp" srcset="img/hero-after-640.webp 640w, img/hero-after-1024.webp 1024w" sizes="(max-width: 700px) 100vw, 50vw"><img src="img/hero-after-1024.jpg" width="2048" height="1152" alt="" loading="lazy"></picture><span class="pair-t"><strong>Masonry</strong><span>Footings, retaining walls, and steps built on the finished grade.</span></span></a>
     </div>
   </section>
 </div>
 
 </main>
 
-<footer class="foot field-paper" id="footer">
-  <div class="grid foot-cols">
+<footer class="foot" id="footer">
+  <div class="wrap grid foot-cols">
     <div class="foot-col"><ul><li>Pages</li><li><a href="#top" data-view="home">Home</a></li><li><a href="#masonry" data-view="masonry">Masonry</a></li><li><a href="#clearing" data-view="clearing">Land clearing</a></li><li><a href="#grading" data-view="grading">Grading</a></li><li><a href="#contact">Contact</a></li></ul></div>
     <div class="foot-col"><ul><li>Estimates</li><li>Free, on site</li><li>Written, itemized</li><li><a href="#estimate">Request one</a></li></ul></div>
     <div class="foot-col"><ul><li>Hours</li><li><mark class="ph">[Mon to Fri, 7 am to 5 pm]</mark></li><li>English and Spanish</li></ul></div>
     <div class="foot-col"><ul><li>Contact</li><li><mark class="ph">[Phone number]</mark></li><li><mark class="ph">[Email address]</mark></li><li><mark class="ph">[City, State]</mark></li></ul></div>
   </div>
-  <div class="foot-mark">
+  <div class="wrap foot-mark">
     <div class="foot-name" aria-hidden="true"><span class="fit" data-fit translate="no">C&amp;W<br class="br"> Masonry</span></div>
     <p class="legal">© 2026 C&amp;W Masonry, LLC · <mark class="ph">[City, State]</mark> · Licence <mark class="ph">[License number]</mark></p>
   </div>
 </footer>
 
-<script src="es.js?v=3"></script>
+<script src="es.js?v=c59d2ed0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
 (function () {
   'use strict';
@@ -1154,13 +967,18 @@ main{position:relative;z-index:1;background:var(--bg)}
   /* Fill these in and the request button opens the visitor's email app with the request written. */
   var CONTACT = { email: '', phone: '' };
 
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var motion = !reduce && window.gsap && window.ScrollTrigger;
+  if (motion) { gsap.registerPlugin(ScrollTrigger); ScrollTrigger.config({ ignoreMobileResize: true }); }
+
   /* ---------- language ---------- */
   var ES = window.CW_ES || {}, DYN = ES.__dyn || {}, lang = 'en';
   var textNodes = [], attrNodes = [];
   function tr(s) { return lang === 'es' ? (DYN[s] || (typeof ES[s] === 'string' ? ES[s] : s)) : s; }
+  each(document.querySelectorAll('[data-es]'), function (el) { if (!el.getAttribute('data-en')) el.setAttribute('data-en', el.innerHTML); });
   (function collect() {
     var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, { acceptNode: function (n) {
-      var p = n.parentNode; if (!p || p.nodeName === 'SCRIPT' || p.nodeName === 'STYLE' || (p.closest && p.closest('[translate="no"]'))) return NodeFilter.FILTER_REJECT;
+      var p = n.parentNode; if (!p || p.nodeName === 'SCRIPT' || p.nodeName === 'STYLE' || (p.closest && p.closest('[translate="no"],[data-es]'))) return NodeFilter.FILTER_REJECT;
       return n.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT; } });
     var n;
     while ((n = w.nextNode())) { var key = n.nodeValue.replace(/\s+/g, ' ').trim(); if (typeof ES[key] === 'string') textNodes.push({ n: n, en: n.nodeValue, key: key }); }
@@ -1186,7 +1004,8 @@ main{position:relative;z-index:1;background:var(--bg)}
   /* ---------- menu sheet ---------- */
   var menuBtn = $('menu-btn'), sheet = $('sheet');
   function closeSheet() { sheet.hidden = true; menuBtn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
-  menuBtn.addEventListener('click', function () { if (sheet.hidden) { sheet.hidden = false; menuBtn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; $('sheet-close').focus(); } else closeSheet(); });
+  function openSheet() { sheet.hidden = false; menuBtn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; $('sheet-close').focus(); }
+  menuBtn.addEventListener('click', function () { if (sheet.hidden) openSheet(); else closeSheet(); });
   $('sheet-close').addEventListener('click', function () { closeSheet(); menuBtn.focus(); });
   each(sheet.querySelectorAll('a'), function (a) { a.addEventListener('click', closeSheet); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !sheet.hidden) { closeSheet(); menuBtn.focus(); } });
@@ -1198,19 +1017,24 @@ main{position:relative;z-index:1;background:var(--bg)}
     var avail = el.clientWidth - 2; if (avail <= 0) return;
     var base = parseFloat(getComputedStyle(el).fontSize) || 100;
     probe.style.fontSize = ''; var w = probe.scrollWidth; if (!w) return;
-    var size = base * avail / w; el.style.fontSize = Math.max(32, size) + 'px';
+    var size = base * avail / w; el.style.fontSize = Math.max(30, Math.min(base, size)) + 'px';
   }
-  fitAll = function () { each(document.querySelectorAll('[data-fit]'), function (p) { fit(p.closest('.monument, .foot-name, .contact-mail') || p); }); };
+  fitAll = function () { each(document.querySelectorAll('[data-fit]'), function (p) { fit(p.closest('.foot-name, .contact-mail') || p); }); };
   fitAll();
-  var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(fitAll, 120); });
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitAll);
-  window.addEventListener('load', fitAll);
+  var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { fitAll(); if (motion) ScrollTrigger.refresh(); }, 160); });
+  if (document.fonts) {
+    if (document.fonts.ready) document.fonts.ready.then(function () { fitAll(); if (motion) ScrollTrigger.refresh(); });
+    if (document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', function () { fitAll(); if (motion) ScrollTrigger.refresh(); });
+    if (document.fonts.load) document.fonts.load('800 100px Montserrat').then(fitAll, function () {});
+  }
+  window.addEventListener('load', function () { fitAll(); setTimeout(fitAll, 1200); });
 
   /* ---------- views ---------- */
   var home = $('view-home');
   var VIEWS = { masonry: $('view-masonry'), clearing: $('view-clearing'), grading: $('view-grading') };
   var navLinks = document.querySelectorAll('a[data-view]');
   var current = null;
+  function viewEl(name) { return name === 'home' ? home : VIEWS[name]; }
   function jumpTop() { var root = document.documentElement; root.style.scrollBehavior = 'auto'; window.scrollTo(0, 0); requestAnimationFrame(function () { root.style.scrollBehavior = ''; }); }
   function route() {
     var h = (location.hash || '').replace(/^#/, ''); try { h = decodeURIComponent(h); } catch (e) {}
@@ -1218,14 +1042,15 @@ main{position:relative;z-index:1;background:var(--bg)}
     Object.keys(VIEWS).forEach(function (k) { if (h === k) name = k; else if (h.indexOf(k + '-') === 0) { name = k; target = h; } });
     if (name === 'home' && h && h !== 'top') target = h;
     var changed = current !== name;
+    if (changed && current !== null) unmountMotion(current);
     home.hidden = name !== 'home';
     Object.keys(VIEWS).forEach(function (k) { VIEWS[k].hidden = k !== name; });
     each(navLinks, function (a) { if (a.getAttribute('data-view') === name) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
     var wasLoaded = current !== null; current = name;
+    if (changed) { jumpTop(); mountMotion(name); fitAll(); observeReveals(); }
     var el = target ? document.getElementById(target) : null;
-    if (el) { if (changed) jumpTop(); el.scrollIntoView({ block: 'start' }); }
-    else if (changed) { jumpTop(); if (wasLoaded) { var hd = (name === 'home' ? home : VIEWS[name]).querySelector('h1'); if (hd) { hd.setAttribute('tabindex', '-1'); hd.focus({ preventScroll: true }); } } }
-    if (changed) { fitAll(); startFade(); observeReveals(); }
+    if (el) { requestAnimationFrame(function () { el.scrollIntoView({ block: 'start' }); }); }
+    else if (changed && wasLoaded) { var hd = viewEl(name).querySelector('h1'); if (hd) { hd.setAttribute('tabindex', '-1'); hd.focus({ preventScroll: true }); } }
   }
   window.addEventListener('hashchange', route);
 
@@ -1266,7 +1091,7 @@ main{position:relative;z-index:1;background:var(--bg)}
     $('slip-crew').textContent = tr('One crew');
   }
   each(document.querySelectorAll('#planner input'), function (i) { i.addEventListener('change', renderSlip); });
-  each(document.querySelectorAll('a.btn-top, .sheet a.btn'), function (a) {
+  each(document.querySelectorAll('a.btn-hero, .sheet a.btn'), function (a) {
     a.addEventListener('click', function () {
       var k = current === 'home' ? '' : current;
       var set = function (name, v) { var i = document.querySelector('input[name="' + name + '"][value="' + v + '"]'); if (i) i.checked = true; };
@@ -1290,7 +1115,7 @@ main{position:relative;z-index:1;background:var(--bg)}
       tr('Work') + ': ' + p.trades.map(function (k) { return tr(TRADE_NAME[k]); }).join(', '),
       tr('Details') + ': ' + (d.details || tr('none'))].join('\n');
   }
-  function show(box) { errBox.hidden = true; fallback.hidden = true; box.hidden = false; box.focus(); }
+  function show(box) { errBox.hidden = true; fallback.hidden = true; box.hidden = false; box.focus(); if (motion) ScrollTrigger.refresh(); }
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var d = collect(), problems = [];
@@ -1317,33 +1142,165 @@ main{position:relative;z-index:1;background:var(--bg)}
     a.addEventListener('mouseenter', showD); a.addEventListener('focus', showD);
   });
 
-  /* ---------- motion: crossfade, reveals ---------- */
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var fadeTimer = null;
-  function startFade() {
-    clearInterval(fadeTimer); fadeTimer = null;
-    if (reduce) return;
-    var view = home.hidden ? null : home; if (!view) return;
-    var pics = view.querySelectorAll('.hero-pics img'); if (pics.length < 2) return;
-    var i = 0;
-    fadeTimer = setInterval(function () {
-      if (document.hidden) return;
-      pics[i].classList.remove('is-on'); i = (i + 1) % pics.length; pics[i].classList.add('is-on');
-    }, 5500);
-  }
+  /* ---------- reveals ---------- */
   var io = null;
   function observeReveals() {
     if (!('IntersectionObserver' in window)) { each(document.querySelectorAll('[data-reveal]'), function (el) { el.classList.add('is-in'); }); return; }
-    if (!io) io = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px 35% 0px', threshold: 0.01 });
-    var scope = home.hidden ? null : home; Object.keys(VIEWS).forEach(function (k) { if (!VIEWS[k].hidden) scope = VIEWS[k]; });
-    if (!scope) return;
+    if (!io) io = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px 30% 0px', threshold: 0.01 });
+    var scope = viewEl(current || 'home');
     each(scope.querySelectorAll('[data-reveal]:not(.is-in)'), function (el) { io.observe(el); });
-    each(scope.querySelectorAll('.band'), function (el) { io.observe(el); });
   }
-  /* safety: nothing stays hidden if the observer never fires */
-  function revealAll() { each(document.querySelectorAll('[data-reveal]:not(.is-in), .band:not(.is-in)'), function (el) { el.classList.add('is-in'); }); }
-  setTimeout(revealAll, 2500);
-  window.addEventListener('load', function () { setTimeout(revealAll, 1200); });
+  function revealAll() { each(document.querySelectorAll('[data-reveal]:not(.is-in)'), function (el) { el.classList.add('is-in'); }); }
+  setTimeout(revealAll, 3000);
+  window.addEventListener('load', function () { setTimeout(revealAll, 1500); });
+
+  /* ---------- rain on the hero ---------- */
+  var rain = (function () {
+    var canvas = $('rain'); if (!canvas) return { start: function () {}, stop: function () {} };
+    var ctx = canvas.getContext('2d'), drops = [], raf = null, w = 0, h = 0, dpr = 1, running = false;
+    function size() {
+      var r = canvas.parentNode.getBoundingClientRect(); dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      w = Math.max(1, Math.round(r.width)); h = Math.max(1, Math.round(r.height));
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = Math.round(Math.min(220, w * h / 9000)); drops = [];
+      for (var i = 0; i < n; i++) drops.push({ x: Math.random() * w, y: Math.random() * h, l: 10 + Math.random() * 22, s: 9 + Math.random() * 14, o: .12 + Math.random() * .3 });
+    }
+    function frame() {
+      if (!running) return;
+      ctx.clearRect(0, 0, w, h); ctx.lineWidth = 1; ctx.lineCap = 'round';
+      for (var i = 0; i < drops.length; i++) {
+        var d = drops[i];
+        ctx.strokeStyle = 'rgba(214,220,226,' + d.o + ')';
+        ctx.beginPath(); ctx.moveTo(d.x, d.y); ctx.lineTo(d.x - d.l * .18, d.y + d.l); ctx.stroke();
+        d.y += d.s; d.x -= d.s * .18;
+        if (d.y > h + 20) { d.y = -30; d.x = Math.random() * (w + 60); }
+      }
+      raf = requestAnimationFrame(frame);
+    }
+    var rs; window.addEventListener('resize', function () { clearTimeout(rs); rs = setTimeout(function () { if (running) size(); }, 200); });
+    return {
+      start: function () { if (reduce || running) return; running = true; size(); frame(); },
+      stop: function () { running = false; if (raf) cancelAnimationFrame(raf); raf = null; }
+    };
+  })();
+  document.addEventListener('visibilitychange', function () { if (document.hidden) rain.stop(); else if (current === 'home' && window.scrollY < window.innerHeight * 3) rain.start(); });
+
+  /* ---------- motion: GSAP + ScrollTrigger, per view ---------- */
+  var ctxs = {};
+  function setOn(list, idx, attr) {
+    each(list, function (el, i) { el.classList.toggle('is-on', i === idx); });
+  }
+  function mountMotion(name) {
+    var view = viewEl(name);
+    if (!motion) {
+      /* reduced motion or no GSAP: static states, the finished lot showing */
+      if (name === 'home') { setOn(view.querySelectorAll('.plate'), 2); setOn(view.querySelectorAll('.stage-cap'), 2); each(view.querySelectorAll('.word'), function (w) { w.style.opacity = 1; w.style.position = 'relative'; }); }
+      return;
+    }
+    if (ctxs[name]) ctxs[name].revert();
+    ctxs[name] = gsap.context(function () {
+      if (name === 'home') { heroHome(view); storyWords(view); showcase(view); metrics(view); }
+      else heroTab(view);
+      parallaxPics(view);
+    }, view);
+    ScrollTrigger.refresh();
+    if (name === 'home') rain.start(); else rain.stop();
+  }
+  function unmountMotion(name) { if (ctxs[name]) { ctxs[name].revert(); delete ctxs[name]; } }
+
+  function heroHome(view) {
+    var hero = view.querySelector('.hero'), frame = view.querySelector('#hero-frame'), back = view.querySelector('.hero-back');
+    var lines = view.querySelectorAll('.hero-back-line'), plates = view.querySelectorAll('.plate'), caps = view.querySelectorAll('.stage-cap');
+    var copy = view.querySelector('.frame-copy'), cue = view.querySelector('.scroll-cue'), scrim = view.querySelector('.frame-scrim');
+    var skies = view.querySelectorAll('.layer-sky'), grounds = view.querySelectorAll('.layer-ground'), mist = view.querySelector('.mist');
+    var last = -1;
+    function setPlate(p) {
+      var idx = p < .36 ? 0 : p < .7 ? 1 : 2;
+      if (idx !== last) { last = idx; setOn(plates, idx); setOn(caps, idx); }
+    }
+    var tl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top', end: '+=260%', pin: true, scrub: .9, anticipatePin: 1,
+      onUpdate: function (self) { setPlate(self.progress); },
+      onEnter: function () { rain.start(); }, onEnterBack: function () { rain.start(); }, onLeave: function () { rain.stop(); } } });
+    /* the frame shrinks and rounds off while the name comes up behind it */
+    tl.to(frame, { scale: .62, borderRadius: 30, ease: 'power1.inOut', duration: .38 }, 0)
+      .to(copy, { y: -60, opacity: 0, ease: 'power1.in', duration: .16 }, .02)
+      .to(cue, { opacity: 0, duration: .06 }, 0)
+      .fromTo(back, { opacity: 0 }, { opacity: 1, ease: 'power1.out', duration: .3 }, .08)
+      .fromTo(lines, { letterSpacing: '.4em', y: 30 }, { letterSpacing: '.16em', y: 0, ease: 'power2.out', duration: .4, stagger: .04 }, .06)
+      .to(scrim, { opacity: .55, duration: .3 }, .08)
+      /* the planes keep drifting at different speeds for the whole scroll: sky slowest, ground faster */
+      .fromTo(skies, { yPercent: 0, scale: 1 }, { yPercent: -5, scale: 1.06, ease: 'none', duration: 1 }, 0)
+      .fromTo(grounds, { yPercent: 0 }, { yPercent: -13, ease: 'none', duration: 1 }, 0)
+      .fromTo(mist, { yPercent: 6 }, { yPercent: -10, ease: 'none', duration: 1 }, 0)
+      /* the name tracks out slowly behind the frame as the lot changes */
+      .to(lines, { letterSpacing: '.26em', ease: 'none', duration: .6 }, .4)
+      .to(frame, { scale: .56, ease: 'power1.in', duration: .14 }, .86)
+      .to(back, { opacity: .25, duration: .14 }, .86);
+    setPlate(0);
+  }
+
+  function heroTab(view) {
+    var hero = view.querySelector('.hero'), frame = view.querySelector('.frame'), back = view.querySelector('.hero-back');
+    var lines = view.querySelectorAll('.hero-back-line'), copy = view.querySelector('.frame-copy'), skies = view.querySelectorAll('.layer-sky'), scrim = view.querySelector('.frame-scrim');
+    var tl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top', end: '+=120%', pin: true, scrub: .9, anticipatePin: 1 } });
+    tl.to(frame, { scale: .62, borderRadius: 30, ease: 'power1.inOut', duration: .7 }, 0)
+      .to(copy, { y: -50, opacity: 0, ease: 'power1.in', duration: .25 }, .02)
+      .fromTo(back, { opacity: 0 }, { opacity: 1, ease: 'power1.out', duration: .5 }, .12)
+      .fromTo(lines, { letterSpacing: '.4em', y: 30 }, { letterSpacing: '.18em', y: 0, ease: 'power2.out', duration: .6 }, .1)
+      .to(scrim, { opacity: .6, duration: .4 }, .1)
+      .fromTo(skies, { yPercent: 0, scale: 1 }, { yPercent: -6, scale: 1.06, ease: 'none', duration: 1 }, 0);
+  }
+
+  function storyWords(view) {
+    var story = view.querySelector('.story'), words = view.querySelectorAll('.word'), bigs = view.querySelectorAll('.word-big');
+    var bgs = view.querySelectorAll('.story-bg'), bar = view.querySelector('.story-progress i');
+    var n = words.length, last = -1;
+    function setBg(p) {
+      var idx = Math.min(bgs.length - 1, Math.floor(p * n));
+      if (idx !== last) { last = idx; setOn(bgs, idx); }
+    }
+    var tl = gsap.timeline({ scrollTrigger: { trigger: story, start: 'top top', end: '+=' + (n * 100) + '%', pin: true, scrub: .6, anticipatePin: 1,
+      onUpdate: function (self) { bar.style.width = (self.progress * 100).toFixed(2) + '%'; setBg(self.progress); } } });
+    each(words, function (w, i) {
+      var big = bigs[i];
+      tl.fromTo(w, { opacity: 0, y: 40, scale: 1.08 }, { opacity: 1, y: 0, scale: 1, ease: 'power2.out', duration: .34 }, i)
+        .fromTo(big, { letterSpacing: '.34em' }, { letterSpacing: '.1em', ease: 'power2.out', duration: .34 }, i);
+      if (i < n - 1) {
+        tl.to(w, { opacity: 0, y: -46, scale: .94, ease: 'power2.in', duration: .3 }, i + .66)
+          .to(big, { letterSpacing: '.02em', ease: 'power2.in', duration: .3 }, i + .66);
+      } else {
+        tl.to(w, { opacity: 1, duration: .34 }, i + .66);
+      }
+    });
+    each(bgs, function (bg) { gsap.fromTo(bg, { yPercent: 4, scale: 1.04 }, { yPercent: -4, scale: 1, ease: 'none', scrollTrigger: { trigger: story, start: 'top top', end: '+=' + (n * 100) + '%', scrub: true } }); });
+    setBg(0);
+  }
+
+  function showcase(view) {
+    var cards = view.querySelectorAll('.card');
+    each(cards, function (card, i) {
+      if (i < cards.length - 1) {
+        gsap.to(card, { scale: .94 - i * .02, filter: 'brightness(.5)', ease: 'none', scrollTrigger: { trigger: cards[i + 1], start: 'top 90%', end: 'top 20%', scrub: true } });
+      }
+    });
+  }
+
+  function metrics(view) {
+    each(view.querySelectorAll('[data-count]'), function (el) {
+      var target = parseInt(el.getAttribute('data-count'), 10) || 0, obj = { v: 0 };
+      ScrollTrigger.create({ trigger: el, start: 'top 85%', once: true, onEnter: function () {
+        gsap.to(obj, { v: target, duration: 1.6, ease: 'power3.out', onUpdate: function () { el.textContent = Math.round(obj.v); } });
+      } });
+    });
+  }
+
+  function parallaxPics(view) {
+    each(view.querySelectorAll('.card-pic img, .about-fig img, .pair img'), function (img) {
+      gsap.fromTo(img, { yPercent: -6 }, { yPercent: 6, ease: 'none', scrollTrigger: { trigger: img.closest('.card, .about-fig, .pair'), start: 'top bottom', end: 'bottom top', scrub: true } });
+    });
+    var cbg = view.querySelector('.contact-bg img');
+    if (cbg) gsap.fromTo(cbg, { yPercent: -8 }, { yPercent: 8, ease: 'none', scrollTrigger: { trigger: view.querySelector('.contact-sec'), start: 'top bottom', end: 'bottom top', scrub: true } });
+  }
 
   (function initLang() {
     var saved = null; try { saved = localStorage.getItem('cw-lang'); } catch (e) {}
@@ -1351,7 +1308,9 @@ main{position:relative;z-index:1;background:var(--bg)}
     if (saved === 'es') applyLang('es'); else renderSlip();
   })();
   route();
+  window.addEventListener('load', function () { if (motion) ScrollTrigger.refresh(); });
 })();
+
 </script>
 </body>
 </html>
