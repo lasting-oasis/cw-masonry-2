@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/hero-before-1600.webp" type="image/webp" imagesizes="100vw" imagesrcset="img/hero-before-640.webp 640w, img/hero-before-1024.webp 1024w, img/hero-before-1600.webp 1600w, img/hero-before-2048.webp 2048w">
-<link rel="stylesheet" href="styles.css?v=73d86b2b">
+<link rel="stylesheet" href="styles.css?v=bdf8d2c6">
 </head>
 <body>
 <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
@@ -129,29 +129,17 @@
               <source type="image/webp" srcset="img/hero-before-640.webp 640w, img/hero-before-1024.webp 1024w, img/hero-before-1600.webp 1600w, img/hero-before-2048.webp 2048w" sizes="100vw">
               <img src="img/hero-before-1600.jpg" srcset="img/hero-before-640.jpg 640w, img/hero-before-1024.jpg 1024w, img/hero-before-1600.jpg 1600w, img/hero-before-2048.jpg 2048w" sizes="100vw" width="2048" height="1152" alt="A wooded building lot at dusk, survey stakes flagged in pink, before any work" fetchpriority="high">
             </picture>
-            <picture class="layer layer-ground" aria-hidden="true">
-              <source type="image/webp" srcset="img/hero-before-640.webp 640w, img/hero-before-1024.webp 1024w, img/hero-before-1600.webp 1600w, img/hero-before-2048.webp 2048w" sizes="100vw">
-              <img src="img/hero-before-1600.jpg" srcset="img/hero-before-640.jpg 640w, img/hero-before-1024.jpg 1024w, img/hero-before-1600.jpg 1600w, img/hero-before-2048.jpg 2048w" sizes="100vw" width="2048" height="1152" alt="">
-            </picture>
           </div>
           <div class="plate" data-plate="during">
             <picture class="layer layer-sky">
               <source type="image/webp" srcset="img/hero-during-640.webp 640w, img/hero-during-1024.webp 1024w, img/hero-during-1600.webp 1600w, img/hero-during-2048.webp 2048w" sizes="100vw">
               <img src="img/hero-during-1600.jpg" srcset="img/hero-during-640.jpg 640w, img/hero-during-1024.jpg 1024w, img/hero-during-1600.jpg 1600w, img/hero-during-2048.jpg 2048w" sizes="100vw" width="2048" height="1152" alt="The same lot cleared and being graded, red earth, an excavator and a dozer at work" loading="lazy">
             </picture>
-            <picture class="layer layer-ground" aria-hidden="true">
-              <source type="image/webp" srcset="img/hero-during-640.webp 640w, img/hero-during-1024.webp 1024w, img/hero-during-1600.webp 1600w, img/hero-during-2048.webp 2048w" sizes="100vw">
-              <img src="img/hero-during-1600.jpg" srcset="img/hero-during-640.jpg 640w, img/hero-during-1024.jpg 1024w, img/hero-during-1600.jpg 1600w, img/hero-during-2048.jpg 2048w" sizes="100vw" width="2048" height="1152" alt="" loading="lazy">
-            </picture>
           </div>
           <div class="plate" data-plate="after">
             <picture class="layer layer-sky">
               <source type="image/webp" srcset="img/hero-after-640.webp 640w, img/hero-after-1024.webp 1024w, img/hero-after-1600.webp 1600w, img/hero-after-2048.webp 2048w" sizes="100vw">
               <img src="img/hero-after-1600.jpg" srcset="img/hero-after-640.jpg 640w, img/hero-after-1024.jpg 1024w, img/hero-after-1600.jpg 1600w, img/hero-after-2048.jpg 2048w" sizes="100vw" width="2048" height="1152" alt="The finished lot: a long stone retaining wall with brick steps holding a level pad" loading="lazy">
-            </picture>
-            <picture class="layer layer-ground" aria-hidden="true">
-              <source type="image/webp" srcset="img/hero-after-640.webp 640w, img/hero-after-1024.webp 1024w, img/hero-after-1600.webp 1600w, img/hero-after-2048.webp 2048w" sizes="100vw">
-              <img src="img/hero-after-1600.jpg" srcset="img/hero-after-640.jpg 640w, img/hero-after-1024.jpg 1024w, img/hero-after-1600.jpg 1600w, img/hero-after-2048.jpg 2048w" sizes="100vw" width="2048" height="1152" alt="" loading="lazy">
             </picture>
           </div>
         </div>
@@ -956,7 +944,7 @@
   </div>
 </footer>
 
-<script src="es.js?v=73d86b2b"></script>
+<script src="es.js?v=bdf8d2c6"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
@@ -1247,7 +1235,7 @@
     var hero = view.querySelector('.hero'), frame = view.querySelector('#hero-frame'), back = view.querySelector('.hero-back');
     var lines = view.querySelectorAll('.hero-back-line'), plates = view.querySelectorAll('.plate'), caps = view.querySelectorAll('.stage-cap');
     var copy = view.querySelector('.frame-copy'), cue = view.querySelector('.scroll-cue'), scrim = view.querySelector('.frame-scrim');
-    var skies = view.querySelectorAll('.layer-sky'), grounds = view.querySelectorAll('.layer-ground'), mist = view.querySelector('.mist');
+    var skies = view.querySelectorAll('.layer-sky'), mist = view.querySelector('.mist');
     var last = -1;
     function setPlate(p) {
       var idx = p < .36 ? 0 : p < .7 ? 1 : 2;
@@ -1262,11 +1250,10 @@
       .to(cue, { opacity: 0, duration: .06 }, 0)
       .fromTo(back, { opacity: 0 }, { opacity: 1, ease: 'power1.out', duration: .3 }, .08)
       .fromTo(lines, { letterSpacing: '.4em', y: 30 }, { letterSpacing: '.16em', y: 0, ease: 'power2.out', duration: .4, stagger: .04 }, .06)
-      .to(scrim, { opacity: .55, duration: .3 }, .08)
+      .to(scrim, { opacity: 0, duration: .3 }, .08)
       /* the planes keep drifting at different speeds for the whole scroll: sky slowest, ground faster */
       .fromTo(skies, { yPercent: 0, scale: 1 }, { yPercent: -5, scale: 1.06, ease: 'none', duration: 1 }, 0)
-      .fromTo(grounds, { yPercent: 0 }, { yPercent: -13, ease: 'none', duration: 1 }, 0)
-      .fromTo(mist, { yPercent: 6 }, { yPercent: -10, ease: 'none', duration: 1 }, 0)
+      .fromTo(mist, { yPercent: 10 }, { yPercent: -16, ease: 'none', duration: 1 }, 0)
       /* the name tracks out slowly behind the frame as the lot changes */
       .to(lines, { letterSpacing: '.26em', ease: 'none', duration: .6 }, .4)
       .to(frame, { scale: .56, ease: 'power1.in', duration: .14 }, .86)
@@ -1282,7 +1269,7 @@
       .to(copy, { y: -50, opacity: 0, ease: 'power1.in', duration: .25 }, .02)
       .fromTo(back, { opacity: 0 }, { opacity: 1, ease: 'power1.out', duration: .5 }, .12)
       .fromTo(lines, { letterSpacing: '.4em', y: 30 }, { letterSpacing: '.18em', y: 0, ease: 'power2.out', duration: .6 }, .1)
-      .to(scrim, { opacity: .6, duration: .4 }, .1)
+      .to(scrim, { opacity: 0, duration: .4 }, .1)
       .fromTo(skies, { yPercent: 0, scale: 1 }, { yPercent: -6, scale: 1.06, ease: 'none', duration: 1 }, 0);
   }
 
@@ -1315,7 +1302,7 @@
     var cards = view.querySelectorAll('.card');
     each(cards, function (card, i) {
       if (i < cards.length - 1) {
-        gsap.to(card, { scale: .94 - i * .02, filter: 'brightness(.5)', ease: 'none', scrollTrigger: { trigger: cards[i + 1], start: 'top 90%', end: 'top 20%', scrub: true } });
+        gsap.fromTo(card, { scale: 1, filter: 'brightness(1)' }, { scale: .94 - i * .02, filter: 'brightness(.55)', ease: 'none', scrollTrigger: { trigger: cards[i + 1], start: 'top 90%', end: 'top 20%', scrub: true } });
       }
     });
   }
