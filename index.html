@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/hero-before-1600.webp" type="image/webp" imagesizes="100vw" imagesrcset="img/hero-before-640.webp 640w, img/hero-before-1024.webp 1024w, img/hero-before-1600.webp 1600w, img/hero-before-2048.webp 2048w">
-<link rel="stylesheet" href="styles.css?v=2fe3bfd2">
+<link rel="stylesheet" href="styles.css?v=f2b6bfc9">
 </head>
 <body>
 <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
@@ -944,7 +944,7 @@
   </div>
 </footer>
 
-<script src="es.js?v=2fe3bfd2"></script>
+<script src="es.js?v=f2b6bfc9"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
@@ -1231,46 +1231,99 @@
   }
   function unmountMotion(name) { if (ctxs[name]) { ctxs[name].revert(); delete ctxs[name]; } }
 
+  /* the opening move. "open" (default): the picture stays full screen and the name rises over it.
+     "frame": the picture holds its size while the edges close in around it. "classic": the frame shrinks.
+     Pick one with ?hero=open | frame | classic */
+  var heroMode = (function () { var m = /[?&]hero=(open|frame|classic)\b/.exec(location.search); return m ? m[1] : 'open'; })();
+  document.documentElement.setAttribute('data-hero', heroMode);
+  function shadeOf(frame) {
+    var s = frame.querySelector('.frame-shade');
+    if (!s) { s = document.createElement('div'); s.className = 'frame-shade'; s.setAttribute('aria-hidden', 'true'); frame.appendChild(s); }
+    return s;
+  }
+  /* "frame": side margins small, bands above and below for the name; the picture inside never changes size */
+  function clipTo(extra) {
+    return function () { var s = Math.round(Math.max(16, window.innerWidth * .04) + (extra || 0)); return 'inset(19% ' + s + 'px 19% ' + s + 'px round 28px)'; };
+  }
+
   function heroHome(view) {
     var hero = view.querySelector('.hero'), frame = view.querySelector('#hero-frame'), back = view.querySelector('.hero-back');
     var lines = view.querySelectorAll('.hero-back-line'), plates = view.querySelectorAll('.plate'), caps = view.querySelectorAll('.stage-cap');
     var copy = view.querySelector('.frame-copy'), cue = view.querySelector('.scroll-cue'), scrim = view.querySelector('.frame-scrim');
-    var skies = view.querySelectorAll('.layer-sky'), mist = view.querySelector('.mist');
+    var skies = view.querySelectorAll('.layer-sky'), mist = view.querySelector('.mist'), shade = shadeOf(frame);
     var last = -1;
     function setPlate(p) {
       var idx = p < .36 ? 0 : p < .7 ? 1 : 2;
       if (idx !== last) { last = idx; setOn(plates, idx); setOn(caps, idx); }
     }
-    var tl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top', end: '+=260%', pin: true, scrub: .9, anticipatePin: 1,
+    var tl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top', end: '+=260%', pin: true, scrub: .9, anticipatePin: 1, invalidateOnRefresh: heroMode === 'frame',
       onUpdate: function (self) { setPlate(self.progress); },
       onEnter: function () { rain.start(); }, onEnterBack: function () { rain.start(); }, onLeave: function () { rain.stop(); } } });
-    /* the frame shrinks and rounds off while the name comes up behind it */
-    tl.to(frame, { scale: .62, borderRadius: 30, ease: 'power1.inOut', duration: .38 }, 0)
-      .to(copy, { y: -60, opacity: 0, ease: 'power1.in', duration: .16 }, .02)
+    tl.to(copy, { y: -60, opacity: 0, ease: 'power1.in', duration: .16 }, .02)
       .to(cue, { opacity: 0, duration: .06 }, 0)
-      .fromTo(back, { opacity: 0 }, { opacity: 1, ease: 'power1.out', duration: .3 }, .08)
-      .fromTo(lines, { letterSpacing: '.4em', y: 30 }, { letterSpacing: '.16em', y: 0, ease: 'power2.out', duration: .4, stagger: .04 }, .06)
-      .to(scrim, { opacity: 0, duration: .3 }, .08)
       /* the planes keep drifting at different speeds for the whole scroll: sky slowest, ground faster */
-      .fromTo(skies, { yPercent: 0, scale: 1 }, { yPercent: -5, scale: 1.06, ease: 'none', duration: 1 }, 0)
-      .fromTo(mist, { yPercent: 10 }, { yPercent: -16, ease: 'none', duration: 1 }, 0)
-      /* the name tracks out slowly behind the frame as the lot changes */
-      .to(lines, { letterSpacing: '.26em', ease: 'none', duration: .6 }, .4)
-      .to(frame, { scale: .56, ease: 'power1.in', duration: .14 }, .86)
-      .to(back, { opacity: .25, duration: .14 }, .86);
+      .fromTo(mist, { yPercent: 10 }, { yPercent: -16, ease: 'none', duration: 1 }, 0);
+    if (heroMode === 'open') {
+      /* no change of shape: the lot changes under the name, then the picture darkens into the next section */
+      tl.to(scrim, { opacity: .6, duration: .3 }, .08)
+        .fromTo(back, { opacity: 0 }, { opacity: 1, ease: 'power1.out', duration: .22 }, .12)
+        .fromTo(shade, { opacity: 0 }, { opacity: .3, ease: 'power1.out', duration: .22 }, .12)
+        .fromTo(lines, { letterSpacing: '.5em', y: 36 }, { letterSpacing: '.16em', y: 0, ease: 'power2.out', duration: .32, stagger: .04 }, .1)
+        .fromTo(skies, { yPercent: 0, scale: 1 }, { yPercent: -5, scale: 1.03, ease: 'none', duration: 1 }, 0)
+        .to(lines, { letterSpacing: '.24em', ease: 'none', duration: .4 }, .44)
+        .to(back, { opacity: 0, y: -40, ease: 'power1.in', duration: .12 }, .86)
+        .to(shade, { opacity: .72, ease: 'power1.in', duration: .14 }, .86);
+    } else if (heroMode === 'frame') {
+      tl.fromTo(frame, { clipPath: 'inset(0% 0px 0% 0px round 0px)' }, { clipPath: clipTo(0), ease: 'power1.inOut', duration: .38 }, 0)
+        .fromTo(back, { opacity: 0 }, { opacity: 1, ease: 'power1.out', duration: .3 }, .08)
+        .fromTo(lines, { letterSpacing: '.4em', y: 30 }, { letterSpacing: '.16em', y: 0, ease: 'power2.out', duration: .4, stagger: .04 }, .06)
+        .to(scrim, { opacity: 0, duration: .3 }, .08)
+        .fromTo(skies, { yPercent: 0, scale: 1 }, { yPercent: -5, scale: 1.03, ease: 'none', duration: 1 }, 0)
+        .to(lines, { letterSpacing: '.26em', ease: 'none', duration: .6 }, .4)
+        .to(frame, { clipPath: clipTo(14), ease: 'power1.in', duration: .14 }, .86)
+        .fromTo(shade, { opacity: 0 }, { opacity: .5, duration: .14 }, .86)
+        .to(back, { opacity: .25, duration: .14 }, .86);
+    } else {
+      /* the frame shrinks and rounds off while the name comes up behind it */
+      tl.to(frame, { scale: .62, borderRadius: 30, ease: 'power1.inOut', duration: .38 }, 0)
+        .fromTo(back, { opacity: 0 }, { opacity: 1, ease: 'power1.out', duration: .3 }, .08)
+        .fromTo(lines, { letterSpacing: '.4em', y: 30 }, { letterSpacing: '.16em', y: 0, ease: 'power2.out', duration: .4, stagger: .04 }, .06)
+        .to(scrim, { opacity: 0, duration: .3 }, .08)
+        .fromTo(skies, { yPercent: 0, scale: 1 }, { yPercent: -5, scale: 1.06, ease: 'none', duration: 1 }, 0)
+        .to(lines, { letterSpacing: '.26em', ease: 'none', duration: .6 }, .4)
+        .to(frame, { scale: .56, ease: 'power1.in', duration: .14 }, .86)
+        .to(back, { opacity: .25, duration: .14 }, .86);
+    }
     setPlate(0);
   }
 
   function heroTab(view) {
     var hero = view.querySelector('.hero'), frame = view.querySelector('.frame'), back = view.querySelector('.hero-back');
     var lines = view.querySelectorAll('.hero-back-line'), copy = view.querySelector('.frame-copy'), skies = view.querySelectorAll('.layer-sky'), scrim = view.querySelector('.frame-scrim');
-    var tl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top', end: '+=120%', pin: true, scrub: .9, anticipatePin: 1 } });
-    tl.to(frame, { scale: .62, borderRadius: 30, ease: 'power1.inOut', duration: .7 }, 0)
-      .to(copy, { y: -50, opacity: 0, ease: 'power1.in', duration: .25 }, .02)
-      .fromTo(back, { opacity: 0 }, { opacity: 1, ease: 'power1.out', duration: .5 }, .12)
-      .fromTo(lines, { letterSpacing: '.4em', y: 30 }, { letterSpacing: '.18em', y: 0, ease: 'power2.out', duration: .6 }, .1)
-      .to(scrim, { opacity: 0, duration: .4 }, .1)
-      .fromTo(skies, { yPercent: 0, scale: 1 }, { yPercent: -6, scale: 1.06, ease: 'none', duration: 1 }, 0);
+    var shade = shadeOf(frame);
+    var tl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top', end: '+=120%', pin: true, scrub: .9, anticipatePin: 1, invalidateOnRefresh: heroMode === 'frame' } });
+    tl.to(copy, { y: -50, opacity: 0, ease: 'power1.in', duration: .25 }, .02);
+    if (heroMode === 'open') {
+      tl.to(scrim, { opacity: .6, duration: .4 }, .1)
+        .fromTo(back, { opacity: 0 }, { opacity: 1, ease: 'power1.out', duration: .35 }, .16)
+        .fromTo(shade, { opacity: 0 }, { opacity: .3, ease: 'power1.out', duration: .35 }, .16)
+        .fromTo(lines, { letterSpacing: '.45em', y: 30 }, { letterSpacing: '.18em', y: 0, ease: 'power2.out', duration: .5 }, .14)
+        .fromTo(skies, { yPercent: 0, scale: 1 }, { yPercent: -6, scale: 1.03, ease: 'none', duration: 1 }, 0)
+        .to(back, { opacity: 0, y: -30, ease: 'power1.in', duration: .16 }, .84)
+        .to(shade, { opacity: .7, ease: 'power1.in', duration: .16 }, .84);
+    } else if (heroMode === 'frame') {
+      tl.fromTo(frame, { clipPath: 'inset(0% 0px 0% 0px round 0px)' }, { clipPath: clipTo(0), ease: 'power1.inOut', duration: .7 }, 0)
+        .fromTo(back, { opacity: 0 }, { opacity: 1, ease: 'power1.out', duration: .5 }, .12)
+        .fromTo(lines, { letterSpacing: '.4em', y: 30 }, { letterSpacing: '.18em', y: 0, ease: 'power2.out', duration: .6 }, .1)
+        .to(scrim, { opacity: 0, duration: .4 }, .1)
+        .fromTo(skies, { yPercent: 0, scale: 1 }, { yPercent: -6, scale: 1.03, ease: 'none', duration: 1 }, 0);
+    } else {
+      tl.to(frame, { scale: .62, borderRadius: 30, ease: 'power1.inOut', duration: .7 }, 0)
+        .fromTo(back, { opacity: 0 }, { opacity: 1, ease: 'power1.out', duration: .5 }, .12)
+        .fromTo(lines, { letterSpacing: '.4em', y: 30 }, { letterSpacing: '.18em', y: 0, ease: 'power2.out', duration: .6 }, .1)
+        .to(scrim, { opacity: 0, duration: .4 }, .1)
+        .fromTo(skies, { yPercent: 0, scale: 1 }, { yPercent: -6, scale: 1.06, ease: 'none', duration: 1 }, 0);
+    }
   }
 
   function storyWords(view) {

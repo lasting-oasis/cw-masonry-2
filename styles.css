@@ -111,6 +111,14 @@ main{position:relative;z-index:1;background:var(--bg)}
 .hero-sub{font-size:var(--step-lead);line-height:1.4;max-width:42ch;color:#f4f4f5;text-shadow:0 1px 14px rgba(0,0,0,.55)}
 .frame-copy .kicker{color:#f4f4f5;justify-self:start;padding:7px 13px 6px;border-radius:999px;background:rgba(15,15,17,.68);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(244,244,245,.12)}
 .frame-copy::before{content:"";position:absolute;inset:-42% -18% -30% -14%;z-index:-1;background:radial-gradient(closest-side,rgba(15,15,17,.72) 0%,rgba(15,15,17,.55) 45%,rgba(15,15,17,.22) 75%,rgba(15,15,17,0) 100%);pointer-events:none}
+/* opening move "open": the picture never changes shape; the name rises over it, centred, on a soft pool of shade */
+[data-hero="open"] .hero-back{z-index:4;grid-template-rows:1fr auto auto 1fr;color:#f4f4f5;text-shadow:0 4px 40px rgba(0,0,0,.5)}
+[data-hero="open"] .hero-back::before{content:"";position:absolute;left:-30%;right:-30%;top:8%;bottom:8%;z-index:-1;background:radial-gradient(closest-side,rgba(15,15,17,.42) 0%,rgba(15,15,17,.26) 50%,rgba(15,15,17,.08) 80%,rgba(15,15,17,0) 100%)}
+[data-hero="open"] .hero-back-line,[data-hero="open"] .hero-back-line:first-child{grid-row:2;align-self:center;padding-top:0;padding-bottom:0}
+[data-hero="open"] .hero-back-line:nth-child(2){grid-row:3;align-self:center;padding-top:0;padding-bottom:0}
+[data-hero="open"] .frame,[data-hero="frame"] .frame{box-shadow:none}
+[data-hero="frame"] .frame{will-change:transform,clip-path}
+.frame-shade{position:absolute;inset:0;z-index:5;background:var(--bg);opacity:0;pointer-events:none}
 .stage-caps{position:absolute;z-index:5;right:var(--margin);bottom:clamp(104px,15vh,160px);list-style:none;margin:0;padding:0;display:grid;gap:14px;text-align:right;pointer-events:none}
 .stage-cap{display:grid;gap:3px;opacity:.3;transition:opacity .6s ease,transform .6s var(--ease-out);transform:translateX(0)}
 .stage-cap.is-on{opacity:1;transform:translateX(-6px)}
