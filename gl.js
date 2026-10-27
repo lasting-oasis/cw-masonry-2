@@ -122,7 +122,7 @@
         frame: function (u, s) { u.zoom.value = 1 + .03 * s.drift; u.dy.value = .04 * s.drift; }
       });
       var st = stages.hero;
-      triggers[name].push(ScrollTrigger.create({ trigger: outer(view.querySelector('.hero')), start: 'top top', end: '+=156%', onRefresh: function () { st.size(); },
+      triggers[name].push(ScrollTrigger.create({ trigger: outer(view.querySelector('.hero')), start: 'top top', end: '+=195%', onRefresh: function () { st.size(); },
         onUpdate: function (self) { st.set(steps(self.progress, [.36, .7], .1), self.progress); } }));
       st.set(0, 0);
     }
@@ -135,7 +135,7 @@
         frame: function (u, s) { u.zoom.value = u.boxH.value < .999 ? 1 : 1.05; u.dy.value = .03 - .06 * s.drift; }
       });
       var ss = stages.story, n = view.querySelectorAll('.word').length;
-      triggers[name].push(ScrollTrigger.create({ trigger: outer(view.querySelector('.story')), start: 'top top', end: '+=' + (n * 60) + '%', onRefresh: function () { ss.size(); },
+      triggers[name].push(ScrollTrigger.create({ trigger: outer(view.querySelector('.story')), start: 'top top', end: '+=' + (n * 75) + '%', onRefresh: function () { ss.size(); },
         onUpdate: function (self) { ss.set(steps(self.progress, [1 / n, 2 / n], .07), self.progress); } }));
       ss.set(0, 0);
     }

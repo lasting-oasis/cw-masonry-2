@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/hero-before-1600.webp" type="image/webp" imagesizes="100vw" imagesrcset="img/hero-before-640.webp 640w, img/hero-before-1024.webp 1024w, img/hero-before-1600.webp 1600w, img/hero-before-2048.webp 2048w">
-<link rel="stylesheet" href="styles.css?v=9f980e89">
+<link rel="stylesheet" href="styles.css?v=fca66d2b">
 </head>
 <body>
 <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
@@ -944,7 +944,7 @@
   </div>
 </footer>
 
-<script src="es.js?v=9f980e89"></script>
+<script src="es.js?v=fca66d2b"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
@@ -1214,7 +1214,7 @@
   if (motion && /[?&]fx=3d\b/.test(location.search)) {
     document.addEventListener('cwgl', function () { if (curName && ctxs[curName]) { window.CW_GL.mount(viewEl(curName), curName); ScrollTrigger.refresh(); } });
     var s3 = document.createElement('script'); s3.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
-    s3.onload = function () { var g = document.createElement('script'); g.src = 'gl.js?v=1'; document.body.appendChild(g); };
+    s3.onload = function () { var g = document.createElement('script'); g.src = 'gl.js?v=2'; document.body.appendChild(g); };
     document.head.appendChild(s3);
   }
   function setOn(list, idx, attr) {
@@ -1264,7 +1264,7 @@
       var idx = p < .36 ? 0 : p < .7 ? 1 : 2;
       if (idx !== last) { last = idx; setOn(plates, idx); setOn(caps, idx); }
     }
-    var tl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top', end: '+=156%', pin: true, scrub: .6, anticipatePin: 1, invalidateOnRefresh: heroMode === 'frame',
+    var tl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top', end: '+=195%', pin: true, scrub: .75, anticipatePin: 1, invalidateOnRefresh: heroMode === 'frame',
       onUpdate: function (self) { setPlate(self.progress); },
       onEnter: function () { rain.start(); }, onEnterBack: function () { rain.start(); }, onLeave: function () { rain.stop(); } } });
     tl.to(copy, { y: -60, opacity: 0, ease: 'power1.in', duration: .16 }, .02)
@@ -1309,7 +1309,7 @@
     var hero = view.querySelector('.hero'), frame = view.querySelector('.frame'), back = view.querySelector('.hero-back');
     var lines = view.querySelectorAll('.hero-back-line'), copy = view.querySelector('.frame-copy'), skies = view.querySelectorAll('.layer-sky'), scrim = view.querySelector('.frame-scrim');
     var shade = shadeOf(frame);
-    var tl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top', end: '+=72%', pin: true, scrub: .6, anticipatePin: 1, invalidateOnRefresh: heroMode === 'frame' } });
+    var tl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top', end: '+=90%', pin: true, scrub: .75, anticipatePin: 1, invalidateOnRefresh: heroMode === 'frame' } });
     tl.to(copy, { y: -50, opacity: 0, ease: 'power1.in', duration: .25 }, .02);
     if (heroMode === 'open') {
       tl.to(scrim, { opacity: .6, duration: .4 }, .1)
@@ -1342,7 +1342,7 @@
       var idx = Math.min(bgs.length - 1, Math.floor(p * n));
       if (idx !== last) { last = idx; setOn(bgs, idx); }
     }
-    var tl = gsap.timeline({ scrollTrigger: { trigger: story, start: 'top top', end: '+=' + (n * 60) + '%', pin: true, scrub: .6, anticipatePin: 1,
+    var tl = gsap.timeline({ scrollTrigger: { trigger: story, start: 'top top', end: '+=' + (n * 75) + '%', pin: true, scrub: .6, anticipatePin: 1,
       onUpdate: function (self) { bar.style.width = (self.progress * 100).toFixed(2) + '%'; setBg(self.progress); } } });
     each(words, function (w, i) {
       var big = bigs[i];
@@ -1355,7 +1355,7 @@
         tl.to(w, { opacity: 1, duration: .34 }, i + .66);
       }
     });
-    each(bgs, function (bg) { gsap.fromTo(bg, { yPercent: 3 }, { yPercent: -3, ease: 'none', scrollTrigger: { trigger: story, start: 'top top', end: '+=' + (n * 60) + '%', scrub: true } }); });
+    each(bgs, function (bg) { gsap.fromTo(bg, { yPercent: 3 }, { yPercent: -3, ease: 'none', scrollTrigger: { trigger: story, start: 'top top', end: '+=' + (n * 75) + '%', scrub: true } }); });
     setBg(0);
   }
 
