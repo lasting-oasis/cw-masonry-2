@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/hero-before-1600.webp" type="image/webp" imagesizes="100vw" imagesrcset="img/hero-before-640.webp 640w, img/hero-before-1024.webp 1024w, img/hero-before-1600.webp 1600w, img/hero-before-2048.webp 2048w">
-<link rel="stylesheet" href="styles.css?v=fca66d2b">
+<link rel="stylesheet" href="styles.css?v=9f25f2fd">
 </head>
 <body>
 <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
@@ -944,7 +944,7 @@
   </div>
 </footer>
 
-<script src="es.js?v=fca66d2b"></script>
+<script src="es.js?v=9f25f2fd"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
@@ -1210,8 +1210,8 @@
 
   /* ---------- motion: GSAP + ScrollTrigger, per view ---------- */
   var ctxs = {}, curName = null;
-  /* preview: three.js transitions for the opening plates and the CLEAR / GRADE / BUILD photos, with ?fx=3d */
-  if (motion && /[?&]fx=3d\b/.test(location.search)) {
+  /* three.js transitions for the opening plates and the CLEAR / GRADE / BUILD photos (turn off with ?fx=off) */
+  if (motion && !/[?&]fx=off\b/.test(location.search)) {
     document.addEventListener('cwgl', function () { if (curName && ctxs[curName]) { window.CW_GL.mount(viewEl(curName), curName); ScrollTrigger.refresh(); } });
     var s3 = document.createElement('script'); s3.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
     s3.onload = function () { var g = document.createElement('script'); g.src = 'gl.js?v=2'; document.body.appendChild(g); };
