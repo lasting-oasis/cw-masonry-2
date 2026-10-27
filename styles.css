@@ -118,6 +118,7 @@ main{position:relative;z-index:1;background:var(--bg)}
 [data-hero="open"] .hero-back-line:nth-child(2){grid-row:3;align-self:center;padding-top:0;padding-bottom:0}
 [data-hero="open"] .frame,[data-hero="frame"] .frame{box-shadow:none}
 [data-hero="frame"] .frame{will-change:transform,clip-path}
+.gl-stage{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
 .frame-shade{position:absolute;inset:0;z-index:5;background:var(--bg);opacity:0;pointer-events:none}
 .stage-caps{position:absolute;z-index:5;right:var(--margin);bottom:clamp(104px,15vh,160px);list-style:none;margin:0;padding:0;display:grid;gap:14px;text-align:right;pointer-events:none}
 .stage-cap{display:grid;gap:3px;opacity:.3;transition:opacity .6s ease,transform .6s var(--ease-out);transform:translateX(0)}
